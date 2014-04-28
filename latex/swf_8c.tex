@@ -1,0 +1,75 @@
+\hypertarget{swf_8c}{\section{libswf/swf.c File Reference}
+\label{swf_8c}\index{libswf/swf.\-c@{libswf/swf.\-c}}
+}
+{\ttfamily \#include \char`\"{}internal.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$ \hyperlink{swf_8c_ae7bed96be09a81591b208f126492e5fe}{swf\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Allocates a \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{swf_8c_ae1bc056a2b319c7385daebd0e50f3e59}{swf\-\_\-tag\-\_\-free} (\hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} $\ast$tag)
+\begin{DoxyCompactList}\small\item\em Free an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. \end{DoxyCompactList}\item 
+void \hyperlink{swf_8c_aeb4891b4c348c1ea92cbd9804c579c5e}{swf\-\_\-free} (\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$swf)
+\begin{DoxyCompactList}\small\item\em Free an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{swf_8c_aeb4891b4c348c1ea92cbd9804c579c5e}{\index{swf.\-c@{swf.\-c}!swf\-\_\-free@{swf\-\_\-free}}
+\index{swf\-\_\-free@{swf\-\_\-free}!swf.c@{swf.\-c}}
+\subsubsection[{swf\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void swf\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F} $\ast$}]{swf}
+\end{DoxyParamCaption}
+)}}\label{swf_8c_aeb4891b4c348c1ea92cbd9804c579c5e}
+
+
+Free an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em swf} & \hyperlink{struct_s_w_f}{S\-W\-F} to free \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file swf.\-c.
+
+\hypertarget{swf_8c_ae7bed96be09a81591b208f126492e5fe}{\index{swf.\-c@{swf.\-c}!swf\-\_\-init@{swf\-\_\-init}}
+\index{swf\-\_\-init@{swf\-\_\-init}!swf.c@{swf.\-c}}
+\subsubsection[{swf\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F}$\ast$ swf\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{swf_8c_ae7bed96be09a81591b208f126492e5fe}
+
+
+Allocates a \hyperlink{struct_s_w_f}{S\-W\-F}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer if the \hyperlink{struct_s_w_f}{S\-W\-F} could be allocated; N\-U\-L\-L otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file swf.\-c.
+
+\hypertarget{swf_8c_ae1bc056a2b319c7385daebd0e50f3e59}{\index{swf.\-c@{swf.\-c}!swf\-\_\-tag\-\_\-free@{swf\-\_\-tag\-\_\-free}}
+\index{swf\-\_\-tag\-\_\-free@{swf\-\_\-tag\-\_\-free}!swf.c@{swf.\-c}}
+\subsubsection[{swf\-\_\-tag\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void swf\-\_\-tag\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Tag} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)}}\label{swf_8c_ae1bc056a2b319c7385daebd0e50f3e59}
+
+
+Free an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tag} & S\-W\-Ftag to free \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file swf.\-c.
+

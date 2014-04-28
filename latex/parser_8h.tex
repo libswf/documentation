@@ -1,0 +1,48 @@
+\hypertarget{parser_8h}{\section{libswf/parser.h File Reference}
+\label{parser_8h}\index{libswf/parser.\-h@{libswf/parser.\-h}}
+}
+{\ttfamily \#include \char`\"{}swf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lzma/\-Lzma\-Dec.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}buffer.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$zlib.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_s_w_f___parser}{S\-W\-F\-\_\-\-Parser}
+\begin{DoxyCompactList}\small\item\em Private data used when parsing an \hyperlink{struct_s_w_f}{S\-W\-F} file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248}{S\-W\-F\-Parser\-State} \{ \hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248a1c14aabc0cb934282a4f2fdc5dfeaa40}{P\-A\-R\-S\-E\-R\-\_\-\-S\-T\-A\-R\-T\-E\-D}, 
+\hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248a1c8a981773b410223c4627e3a444b793}{P\-A\-R\-S\-E\-R\-\_\-\-H\-E\-A\-D\-E\-R}, 
+\hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248afe5e8207f906e7625fd40454e5c88a1f}{P\-A\-R\-S\-E\-R\-\_\-\-B\-O\-D\-Y}, 
+\hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248a501bb9b41554586aababa74273c31c39}{P\-A\-R\-S\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}
+ \}
+\begin{DoxyCompactList}\small\item\em Current state of an \hyperlink{struct_s_w_f}{S\-W\-F} parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{parser_8h_a2d847bc5fa348d069da8cea188ca5248}{\index{parser.\-h@{parser.\-h}!S\-W\-F\-Parser\-State@{S\-W\-F\-Parser\-State}}
+\index{S\-W\-F\-Parser\-State@{S\-W\-F\-Parser\-State}!parser.h@{parser.\-h}}
+\subsubsection[{S\-W\-F\-Parser\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\-W\-F\-Parser\-State}}}\label{parser_8h_a2d847bc5fa348d069da8cea188ca5248}
+
+
+Current state of an \hyperlink{struct_s_w_f}{S\-W\-F} parser. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\-A\-R\-S\-E\-R\-\_\-\-S\-T\-A\-R\-T\-E\-D@{P\-A\-R\-S\-E\-R\-\_\-\-S\-T\-A\-R\-T\-E\-D}!parser.\-h@{parser.\-h}}\index{parser.\-h@{parser.\-h}!P\-A\-R\-S\-E\-R\-\_\-\-S\-T\-A\-R\-T\-E\-D@{P\-A\-R\-S\-E\-R\-\_\-\-S\-T\-A\-R\-T\-E\-D}}\item[{\em 
+\hypertarget{parser_8h_a2d847bc5fa348d069da8cea188ca5248a1c14aabc0cb934282a4f2fdc5dfeaa40}{P\-A\-R\-S\-E\-R\-\_\-\-S\-T\-A\-R\-T\-E\-D}\label{parser_8h_a2d847bc5fa348d069da8cea188ca5248a1c14aabc0cb934282a4f2fdc5dfeaa40}
+}]Reading uncompressed portion of header. \index{P\-A\-R\-S\-E\-R\-\_\-\-H\-E\-A\-D\-E\-R@{P\-A\-R\-S\-E\-R\-\_\-\-H\-E\-A\-D\-E\-R}!parser.\-h@{parser.\-h}}\index{parser.\-h@{parser.\-h}!P\-A\-R\-S\-E\-R\-\_\-\-H\-E\-A\-D\-E\-R@{P\-A\-R\-S\-E\-R\-\_\-\-H\-E\-A\-D\-E\-R}}\item[{\em 
+\hypertarget{parser_8h_a2d847bc5fa348d069da8cea188ca5248a1c8a981773b410223c4627e3a444b793}{P\-A\-R\-S\-E\-R\-\_\-\-H\-E\-A\-D\-E\-R}\label{parser_8h_a2d847bc5fa348d069da8cea188ca5248a1c8a981773b410223c4627e3a444b793}
+}]Reading compressed portion of header. \index{P\-A\-R\-S\-E\-R\-\_\-\-B\-O\-D\-Y@{P\-A\-R\-S\-E\-R\-\_\-\-B\-O\-D\-Y}!parser.\-h@{parser.\-h}}\index{parser.\-h@{parser.\-h}!P\-A\-R\-S\-E\-R\-\_\-\-B\-O\-D\-Y@{P\-A\-R\-S\-E\-R\-\_\-\-B\-O\-D\-Y}}\item[{\em 
+\hypertarget{parser_8h_a2d847bc5fa348d069da8cea188ca5248afe5e8207f906e7625fd40454e5c88a1f}{P\-A\-R\-S\-E\-R\-\_\-\-B\-O\-D\-Y}\label{parser_8h_a2d847bc5fa348d069da8cea188ca5248afe5e8207f906e7625fd40454e5c88a1f}
+}]Reading body data. \index{P\-A\-R\-S\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D@{P\-A\-R\-S\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}!parser.\-h@{parser.\-h}}\index{parser.\-h@{parser.\-h}!P\-A\-R\-S\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D@{P\-A\-R\-S\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}}\item[{\em 
+\hypertarget{parser_8h_a2d847bc5fa348d069da8cea188ca5248a501bb9b41554586aababa74273c31c39}{P\-A\-R\-S\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}\label{parser_8h_a2d847bc5fa348d069da8cea188ca5248a501bb9b41554586aababa74273c31c39}
+}]Read an E\-N\-D tag; finished. \end{description}
+\end{Desc}
+
+
+Definition at line 32 of file parser.\-h.
+

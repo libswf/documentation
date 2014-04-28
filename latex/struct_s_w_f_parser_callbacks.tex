@@ -1,0 +1,83 @@
+\hypertarget{struct_s_w_f_parser_callbacks}{\section{S\-W\-F\-Parser\-Callbacks Struct Reference}
+\label{struct_s_w_f_parser_callbacks}\index{S\-W\-F\-Parser\-Callbacks@{S\-W\-F\-Parser\-Callbacks}}
+}
+
+
+Callbacks used by the \hyperlink{struct_s_w_f}{S\-W\-F} parser.  
+
+
+
+
+{\ttfamily \#include $<$swf.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}{S\-W\-F\-Parser\-Callback} \hyperlink{struct_s_w_f_parser_callbacks_a898af2d0db9d2d038e4d9c039ea91ac2}{tag\-\_\-cb}
+\item 
+\hyperlink{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}{S\-W\-F\-Parser\-Callback} \hyperlink{struct_s_w_f_parser_callbacks_a894666f68df70f79b7b2bed33cccf498}{header\-\_\-cb}
+\begin{DoxyCompactList}\small\item\em Called when the uncompressed header is parsed. data=N\-U\-L\-L. \end{DoxyCompactList}\item 
+\hyperlink{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}{S\-W\-F\-Parser\-Callback} \hyperlink{struct_s_w_f_parser_callbacks_a21beaa520990137cfe64ee20d5eb6054}{header2\-\_\-cb}
+\begin{DoxyCompactList}\small\item\em Called when the compressed header is parsed. data=N\-U\-L\-L. \end{DoxyCompactList}\item 
+\hyperlink{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}{S\-W\-F\-Parser\-Callback} \hyperlink{struct_s_w_f_parser_callbacks_a31cb75f39add22bb824685d6d7ba07a1}{end\-\_\-cb}
+\item 
+void $\ast$ \hyperlink{struct_s_w_f_parser_callbacks_a580259560295835647b2ac312addaf9c}{ctx}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callbacks used by the \hyperlink{struct_s_w_f}{S\-W\-F} parser. 
+
+Definition at line 223 of file swf.\-h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_s_w_f_parser_callbacks_a580259560295835647b2ac312addaf9c}{\index{S\-W\-F\-Parser\-Callbacks@{S\-W\-F\-Parser\-Callbacks}!ctx@{ctx}}
+\index{ctx@{ctx}!SWFParserCallbacks@{S\-W\-F\-Parser\-Callbacks}}
+\subsubsection[{ctx}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ S\-W\-F\-Parser\-Callbacks\-::ctx}}\label{struct_s_w_f_parser_callbacks_a580259560295835647b2ac312addaf9c}
+User-\/provided pointer, passed as the third argument to all callbacks. 
+
+Definition at line 235 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_parser_callbacks_a31cb75f39add22bb824685d6d7ba07a1}{\index{S\-W\-F\-Parser\-Callbacks@{S\-W\-F\-Parser\-Callbacks}!end\-\_\-cb@{end\-\_\-cb}}
+\index{end\-\_\-cb@{end\-\_\-cb}!SWFParserCallbacks@{S\-W\-F\-Parser\-Callbacks}}
+\subsubsection[{end\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser\-Callback} S\-W\-F\-Parser\-Callbacks\-::end\-\_\-cb}}\label{struct_s_w_f_parser_callbacks_a31cb75f39add22bb824685d6d7ba07a1}
+Called when an E\-N\-D tag is parsed. No additional tags are parsed after this. 
+
+Definition at line 233 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_parser_callbacks_a21beaa520990137cfe64ee20d5eb6054}{\index{S\-W\-F\-Parser\-Callbacks@{S\-W\-F\-Parser\-Callbacks}!header2\-\_\-cb@{header2\-\_\-cb}}
+\index{header2\-\_\-cb@{header2\-\_\-cb}!SWFParserCallbacks@{S\-W\-F\-Parser\-Callbacks}}
+\subsubsection[{header2\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser\-Callback} S\-W\-F\-Parser\-Callbacks\-::header2\-\_\-cb}}\label{struct_s_w_f_parser_callbacks_a21beaa520990137cfe64ee20d5eb6054}
+
+
+Called when the compressed header is parsed. data=N\-U\-L\-L. 
+
+
+
+Definition at line 232 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_parser_callbacks_a894666f68df70f79b7b2bed33cccf498}{\index{S\-W\-F\-Parser\-Callbacks@{S\-W\-F\-Parser\-Callbacks}!header\-\_\-cb@{header\-\_\-cb}}
+\index{header\-\_\-cb@{header\-\_\-cb}!SWFParserCallbacks@{S\-W\-F\-Parser\-Callbacks}}
+\subsubsection[{header\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser\-Callback} S\-W\-F\-Parser\-Callbacks\-::header\-\_\-cb}}\label{struct_s_w_f_parser_callbacks_a894666f68df70f79b7b2bed33cccf498}
+
+
+Called when the uncompressed header is parsed. data=N\-U\-L\-L. 
+
+
+
+Definition at line 231 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_parser_callbacks_a898af2d0db9d2d038e4d9c039ea91ac2}{\index{S\-W\-F\-Parser\-Callbacks@{S\-W\-F\-Parser\-Callbacks}!tag\-\_\-cb@{tag\-\_\-cb}}
+\index{tag\-\_\-cb@{tag\-\_\-cb}!SWFParserCallbacks@{S\-W\-F\-Parser\-Callbacks}}
+\subsubsection[{tag\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser\-Callback} S\-W\-F\-Parser\-Callbacks\-::tag\-\_\-cb}}\label{struct_s_w_f_parser_callbacks_a898af2d0db9d2d038e4d9c039ea91ac2}
+Called when a tag is parsed. data=S\-W\-F\-Tag$\ast$ If this callback is provided, the \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} will not be added to swf-\/$>$tags unless the user calls swf\-\_\-add\-\_\-tag(swf, data), and if swf\-\_\-add\-\_\-tag is not called, the user is responsible for calling swf\-\_\-tag\-\_\-free. This callback is not called for E\-N\-D tags. 
+
+Definition at line 224 of file swf.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libswf/\hyperlink{swf_8h}{swf.\-h}\end{DoxyCompactItemize}

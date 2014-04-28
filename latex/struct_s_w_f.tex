@@ -1,0 +1,156 @@
+\hypertarget{struct_s_w_f}{\section{S\-W\-F Struct Reference}
+\label{struct_s_w_f}\index{S\-W\-F@{S\-W\-F}}
+}
+
+
+\hyperlink{struct_s_w_f}{S\-W\-F} data, either parsed from a file or to be written to one.  
+
+
+
+
+{\ttfamily \#include $<$swf.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} \hyperlink{struct_s_w_f_afd3f84db8c0aa52bd4923cb23f81ea0b}{err}
+\begin{DoxyCompactList}\small\item\em Last error that occurred on this \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\item 
+\hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} $\ast$ \hyperlink{struct_s_w_f_a27238e7bdf4bb8961159b4c4a8913580}{tags}
+\item 
+unsigned \hyperlink{struct_s_w_f_ae9a2ba32a4a650ec76d45cc5211f77b0}{nb\-\_\-tags}
+\item 
+\hyperlink{swf_8h_ab2a10479850ea02b88a9da760188f9e8}{S\-W\-F\-Compression} \hyperlink{struct_s_w_f_a6431142bed21f16383a18d8a3f8a19d1}{compression}
+\item 
+uint8\-\_\-t \hyperlink{struct_s_w_f_aafcab8c367361cc18461b683b9278ad0}{version}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_s_w_f}{S\-W\-F} version. Defaults to latest if not set when writing. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{struct_s_w_f_a5e4ec5c09472acb241a3122606d833b2}{size}
+\item 
+\hyperlink{struct_s_w_f_rect}{S\-W\-F\-Rect} \hyperlink{struct_s_w_f_afba7a69a7d2cd1fff8fcfd7ed2007c96}{frame\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Frame size in twips; min\-\_\-x and min\-\_\-y are ignored. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{struct_s_w_f_aa2c564fe1b703896a7970287cc0a131a}{frame\-\_\-rate}
+\begin{DoxyCompactList}\small\item\em Frame delay in 8.\-8 fixed-\/point. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{struct_s_w_f_aad31257e9575ac95fdfdbaaf3505d65b}{frame\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames in file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{struct_s_w_f_a341ef0cf50f79cad21ae0db9fe483dc1}{max\-\_\-tags}
+\begin{DoxyCompactList}\small\item\em Number of tags that can fit in the space allocated. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ \hyperlink{struct_s_w_f_ae63eda75022e0100a17e78b200d607a4}{J\-P\-E\-G\-\_\-tables}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_s_w_f}{S\-W\-F} data, either parsed from a file or to be written to one. 
+
+Definition at line 182 of file swf.\-h.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{struct_s_w_f_a6431142bed21f16383a18d8a3f8a19d1}{\index{S\-W\-F@{S\-W\-F}!compression@{compression}}
+\index{compression@{compression}!SWF@{S\-W\-F}}
+\subsubsection[{compression}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Compression} S\-W\-F\-::compression}}\label{struct_s_w_f_a6431142bed21f16383a18d8a3f8a19d1}
+Type of compression used in file. For input, this is set by the parser, and M\-U\-S\-T N\-O\-T be changed. For output, this is set by the consumer, and 0 is taken to mean \char`\"{}best available for this S\-W\-F version\char`\"{}. 
+
+Definition at line 190 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_afd3f84db8c0aa52bd4923cb23f81ea0b}{\index{S\-W\-F@{S\-W\-F}!err@{err}}
+\index{err@{err}!SWF@{S\-W\-F}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Error\-Desc} S\-W\-F\-::err}}\label{struct_s_w_f_afd3f84db8c0aa52bd4923cb23f81ea0b}
+
+
+Last error that occurred on this \hyperlink{struct_s_w_f}{S\-W\-F}. 
+
+
+
+Definition at line 183 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_aad31257e9575ac95fdfdbaaf3505d65b}{\index{S\-W\-F@{S\-W\-F}!frame\-\_\-count@{frame\-\_\-count}}
+\index{frame\-\_\-count@{frame\-\_\-count}!SWF@{S\-W\-F}}
+\subsubsection[{frame\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t S\-W\-F\-::frame\-\_\-count}}\label{struct_s_w_f_aad31257e9575ac95fdfdbaaf3505d65b}
+
+
+Number of frames in file. 
+
+
+
+Definition at line 200 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_aa2c564fe1b703896a7970287cc0a131a}{\index{S\-W\-F@{S\-W\-F}!frame\-\_\-rate@{frame\-\_\-rate}}
+\index{frame\-\_\-rate@{frame\-\_\-rate}!SWF@{S\-W\-F}}
+\subsubsection[{frame\-\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t S\-W\-F\-::frame\-\_\-rate}}\label{struct_s_w_f_aa2c564fe1b703896a7970287cc0a131a}
+
+
+Frame delay in 8.\-8 fixed-\/point. 
+
+
+
+Definition at line 199 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_afba7a69a7d2cd1fff8fcfd7ed2007c96}{\index{S\-W\-F@{S\-W\-F}!frame\-\_\-size@{frame\-\_\-size}}
+\index{frame\-\_\-size@{frame\-\_\-size}!SWF@{S\-W\-F}}
+\subsubsection[{frame\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Rect} S\-W\-F\-::frame\-\_\-size}}\label{struct_s_w_f_afba7a69a7d2cd1fff8fcfd7ed2007c96}
+
+
+Frame size in twips; min\-\_\-x and min\-\_\-y are ignored. 
+
+
+
+Definition at line 198 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_ae63eda75022e0100a17e78b200d607a4}{\index{S\-W\-F@{S\-W\-F}!J\-P\-E\-G\-\_\-tables@{J\-P\-E\-G\-\_\-tables}}
+\index{J\-P\-E\-G\-\_\-tables@{J\-P\-E\-G\-\_\-tables}!SWF@{S\-W\-F}}
+\subsubsection[{J\-P\-E\-G\-\_\-tables}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ S\-W\-F\-::\-J\-P\-E\-G\-\_\-tables\hspace{0.3cm}{\ttfamily [protected]}}}\label{struct_s_w_f_ae63eda75022e0100a17e78b200d607a4}
+J\-P\-E\-G tables used by Define\-Bits tags. This M\-U\-S\-T be set before attempting to write a Define\-Bits. 
+
+Definition at line 202 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_a341ef0cf50f79cad21ae0db9fe483dc1}{\index{S\-W\-F@{S\-W\-F}!max\-\_\-tags@{max\-\_\-tags}}
+\index{max\-\_\-tags@{max\-\_\-tags}!SWF@{S\-W\-F}}
+\subsubsection[{max\-\_\-tags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\-W\-F\-::max\-\_\-tags\hspace{0.3cm}{\ttfamily [protected]}}}\label{struct_s_w_f_a341ef0cf50f79cad21ae0db9fe483dc1}
+
+
+Number of tags that can fit in the space allocated. 
+
+
+
+Definition at line 188 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_ae9a2ba32a4a650ec76d45cc5211f77b0}{\index{S\-W\-F@{S\-W\-F}!nb\-\_\-tags@{nb\-\_\-tags}}
+\index{nb\-\_\-tags@{nb\-\_\-tags}!SWF@{S\-W\-F}}
+\subsubsection[{nb\-\_\-tags}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\-W\-F\-::nb\-\_\-tags}}\label{struct_s_w_f_ae9a2ba32a4a650ec76d45cc5211f77b0}
+Number of S\-W\-F\-Tags This should be considered read-\/only to the user. 
+
+Definition at line 186 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_a5e4ec5c09472acb241a3122606d833b2}{\index{S\-W\-F@{S\-W\-F}!size@{size}}
+\index{size@{size}!SWF@{S\-W\-F}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t S\-W\-F\-::size}}\label{struct_s_w_f_a5e4ec5c09472acb241a3122606d833b2}
+File length in bytes, decompressed. Read-\/only. This is set by the library during both parsing and writing. 
+
+Definition at line 195 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_a27238e7bdf4bb8961159b4c4a8913580}{\index{S\-W\-F@{S\-W\-F}!tags@{tags}}
+\index{tags@{tags}!SWF@{S\-W\-F}}
+\subsubsection[{tags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Tag}$\ast$ S\-W\-F\-::tags}}\label{struct_s_w_f_a27238e7bdf4bb8961159b4c4a8913580}
+Pointer to array of Tags. This should be considered read-\/only to the user. 
+
+Definition at line 184 of file swf.\-h.
+
+\hypertarget{struct_s_w_f_aafcab8c367361cc18461b683b9278ad0}{\index{S\-W\-F@{S\-W\-F}!version@{version}}
+\index{version@{version}!SWF@{S\-W\-F}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t S\-W\-F\-::version}}\label{struct_s_w_f_aafcab8c367361cc18461b683b9278ad0}
+
+
+\hyperlink{struct_s_w_f}{S\-W\-F} version. Defaults to latest if not set when writing. 
+
+
+
+Definition at line 194 of file swf.\-h.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+libswf/\hyperlink{swf_8h}{swf.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,634 @@
+\hypertarget{swf_8h}{\section{libswf/swf.h File Reference}
+\label{swf_8h}\index{libswf/swf.\-h@{libswf/swf.\-h}}
+}
+{\ttfamily \#include $<$inttypes.\-h$>$}\\*
+{\ttfamily \#include $<$stddef.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc}
+\begin{DoxyCompactList}\small\item\em Description of the last error that occurred within a \hyperlink{struct_s_w_f}{S\-W\-F}, S\-W\-F\-Parser, or S\-W\-F\-Writer. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_s_w_f}{S\-W\-F} tag structure. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_w_f_sprite}{S\-W\-F\-Sprite}
+\begin{DoxyCompactList}\small\item\em Parsed \hyperlink{struct_s_w_f}{S\-W\-F} sprite. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_w_f_rect}{S\-W\-F\-Rect}
+\begin{DoxyCompactList}\small\item\em Parsed \hyperlink{struct_s_w_f}{S\-W\-F} rectangle. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_w_f}{S\-W\-F}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_s_w_f}{S\-W\-F} data, either parsed from a file or to be written to one. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_s_w_f_parser_callbacks}{S\-W\-F\-Parser\-Callbacks}
+\begin{DoxyCompactList}\small\item\em Callbacks used by the \hyperlink{struct_s_w_f}{S\-W\-F} parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_s_w_f___parser}{S\-W\-F\-\_\-\-Parser} \hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser}
+\begin{DoxyCompactList}\small\item\em Opaque struct containing data used by the \hyperlink{struct_s_w_f}{S\-W\-F} parser. \end{DoxyCompactList}\item 
+typedef \hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error}($\ast$ \hyperlink{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}{S\-W\-F\-Parser\-Callback} )(\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser, void $\ast$data, void $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function prototype used by callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error} \{ \\*
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ac03121df54453b728c0659914461be27}{S\-W\-F\-\_\-\-O\-K} = 0, 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a6e95c82dc1c95217bdf267738685640d}{S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A} = 1, 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a0c4acc0a8c30d8be5906cb687e8d89af}{S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D} = 2, 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ae7f54a60f4efe31e19bf7532e859d60b}{S\-W\-F\-\_\-\-I\-N\-V\-A\-L\-I\-D} = -\/127, 
+\\*
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ab282d4794abb1da20cf1fb2ed1736d38}{S\-W\-F\-\_\-\-U\-N\-I\-M\-P\-L\-E\-M\-E\-N\-T\-E\-D}, 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a4b29669f2284fee4052f6a6528cab291}{S\-W\-F\-\_\-\-U\-N\-K\-N\-O\-W\-N}, 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a045e554665373586d05f0a946022ab5a}{S\-W\-F\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-E\-R\-R\-O\-R}, 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99af00c59f37247c67a393ab33ddb67b007}{S\-W\-F\-\_\-\-N\-O\-M\-E\-M}, 
+\\*
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a053ee1ae1038f461090bf163a02b32f6}{S\-W\-F\-\_\-\-R\-E\-C\-O\-M\-P\-I\-L\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em Errors and other return values from libswf functions. 0 is a simple \char`\"{}\-O\-K\char`\"{}, values $>$0 are non-\/failures that include additional information, and values $<$0 are failures. \end{DoxyCompactList}\item 
+enum \hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888}{S\-W\-F\-Tag\-Type} \{ \\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a145777439ea20728d7f3d4ab23cbc102}{S\-W\-F\-\_\-\-E\-N\-D} = 0, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ad89f32aa4cbc4227bbdc93ba4af4d6e6}{S\-W\-F\-\_\-\-S\-H\-O\-W\-\_\-\-F\-R\-A\-M\-E} = 1, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a298d2bbe82f1fcea657f3f69e33adf6d}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E} = 2, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ac11c9252ef35369195c58fa745eb700d}{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T} = 4, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aaa1571c3ab0739f89c11364b900e3d76}{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T} = 5, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a67ced428975763c8d0d36b0f99e9c879}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S} = 6, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aa0d9002a05e266d27f29916b4014080c}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N} = 7, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a5f4c37a79b819492550684a310aed752}{S\-W\-F\-\_\-\-J\-P\-E\-G\-\_\-\-T\-A\-B\-L\-E\-S} = 8, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ae4de0e0abfcd9ff2d21c284d06e319cf}{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D\-\_\-\-C\-O\-L\-O\-R} = 9, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ac71cd32740370684dea8bfdefa57715a}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T} = 10, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aabf3657b88a38e06caeb5dbc3bba992b}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T} = 11, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a82640cbf386afee937bbfa7371cbc3d4}{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-C\-T\-I\-O\-N} = 12, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aa3c88fa93a756f9eeb976d2ae9aaaaaa}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O} = 13, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a278f7e0c301900461f09c26fef567079}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-O\-U\-N\-D} = 14, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aae76bdb2e7d9a457407a71231394bc0f}{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D} = 15, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aaa9c29b8180136cfe20a2da0a03c8fa6}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-S\-O\-U\-N\-D} = 17, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a4627693eeeb809fbaf5f5b3f00ed9b29}{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D} = 18, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888abdab4ae8b7410b7817bc76a0fedf6099}{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-B\-L\-O\-C\-K} = 19, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a103228846a0d11daadd5d79104754624}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S} = 20, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888adf2b6cfc513815f89a0f6043dcc9ef07}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-2} = 21, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a5dedda39b2968b47bf45833c27338ca0}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-2} = 22, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a1a600f3a22f8df4f458ee8d562d52ff7}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-C\-X\-F\-O\-R\-M} = 23, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888af31bfa8f499776e70fe0121a59801e8d}{S\-W\-F\-\_\-\-P\-R\-O\-T\-E\-C\-T} = 24, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888abd31b35a637f87485ed38fc606702482}{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2} = 26, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a0f4532d37f5dd017ba3f9208ee3027ad}{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2} = 28, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a3342c068cc7d4d1a0306cd2ce02dde2e}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-3} = 32, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ad8ddfc80ff71f2db86fa66d8fa584c8e}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T\-\_\-2} = 33, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a46c082cee05cf10c22b4b8cac7c2b95d}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-2} = 34, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a3f0fac20877efe7b72e64c8e78d394a1}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-3} = 35, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a2985f139ee841e521f1c1875662bbcd0}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S\-\_\-2} = 36, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aacb52b9e5ef0640e6458430c7c13f660}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-E\-D\-I\-T\-\_\-\-T\-E\-X\-T} = 37, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a5488bb0999c1eac4d0ca43b457ac4f74}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-P\-R\-I\-T\-E} = 39, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a4280fbc95af8415fd5974ab25cba3cbe}{S\-W\-F\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L} = 43, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a068580fda9b74e3921a2a3270df581a0}{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D\-\_\-2} = 45, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a174abd6b01794cd00b9550cfd3c0a937}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E} = 46, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ab17f1e2733cb421fef6e120813dfb788}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-2} = 48, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ab68628ccf15b6b1a97e117598da71dbd}{S\-W\-F\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S} = 56, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aba7bfc74da00943f494f3721135c79f8}{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S} = 57, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888abadada039a7bf9e3dd5da7cb9b4c299d}{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R} = 58, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a87eb83ea33b0f4d06a87583134749cf9}{S\-W\-F\-\_\-\-D\-O\-\_\-\-I\-N\-I\-T\-\_\-\-A\-C\-T\-I\-O\-N} = 59, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a719ce536e69a657ab9106b5167843d77}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-V\-I\-D\-E\-O\-\_\-\-S\-T\-R\-E\-A\-M} = 60, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ad52e85df77ac95acd4f84849d715ff47}{S\-W\-F\-\_\-\-V\-I\-D\-E\-O\-\_\-\-F\-R\-A\-M\-E} = 61, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aefe3fa5fef89bfd14ddfcc61e5cdcfa3}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O\-\_\-2} = 62, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888afc52fc4f1f50d3e94e7a8659b1a5377a}{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R\-\_\-2} = 64, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a27d8cc642ecb1445417bada978e1294f}{S\-W\-F\-\_\-\-S\-C\-R\-I\-P\-T\-\_\-\-L\-I\-M\-I\-T\-S} = 65, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a75b969c7816f59bd267418b6aef72cb8}{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-T\-A\-B\-\_\-\-I\-N\-D\-E\-X} = 66, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a181cde2ef61dfec4db6bb9b6b0d764e0}{S\-W\-F\-\_\-\-F\-I\-L\-E\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-S} = 69, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888aba1cc858bac94cc1acfa81eba93560ca}{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-3} = 70, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a36b9502fc5f2d2315fc35062637f6d7c}{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S\-\_\-2} = 71, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a381ee91d43302a84a58d8ccf1651ccd6}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-A\-L\-I\-G\-N\-\_\-\-Z\-O\-N\-E\-S} = 73, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a4210216a5dc16e49a20964b5214ef1ea}{S\-W\-F\-\_\-\-C\-S\-M\-\_\-\-T\-E\-X\-T\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S} = 74, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a42f45e63b401bda0f5bc7bd2e56cbb7c}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-3} = 75, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ac09ba1238e35915faa9a5e3fefcb8a50}{S\-W\-F\-\_\-\-S\-Y\-M\-B\-O\-L\-\_\-\-C\-L\-A\-S\-S} = 76, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a341e98f95459c6368421186daa1c78b6}{S\-W\-F\-\_\-\-M\-E\-T\-A\-D\-A\-T\-A} = 77, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a7226625e6b9289cffca534136b1e3254}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-G\-R\-I\-D} = 78, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ae64c54fd69c8444f138bdc6295f444fd}{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-B\-C} = 82, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ac814a55aaed0f5ccbcb4d75739c71c79}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-4} = 83, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ac9c30222cd385fe6a3c3fd5aa8d59d73}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E\-\_\-2} = 84, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a2e80c07352fade089f88c49446cdd58f}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-E\-N\-E\-\_\-\-A\-N\-D\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L\-\_\-\-D\-A\-T\-A} = 86, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888af2e4bcd2e37577677a97cc5e25a83a55}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-D\-A\-T\-A} = 87, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ad9564f401b0afa640d3f091df38f3e2f}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-N\-A\-M\-E} = 88, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a2f4d8cf60b0cd0741b680c3c7f889653}{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D\-\_\-2} = 89, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a09676b3835492ff0ab2a6193eac9695b}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-4} = 90, 
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888ac07d01421c751a1242036ae04270e53e}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-4} = 91, 
+\\*
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888a14cbba29e890ccc78187e7882c8d3734}{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-T\-E\-L\-E\-M\-E\-T\-R\-Y} = 93
+ \}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_s_w_f}{S\-W\-F} tag types. \end{DoxyCompactList}\item 
+enum \hyperlink{swf_8h_ab2a10479850ea02b88a9da760188f9e8}{S\-W\-F\-Compression} \{ \hyperlink{swf_8h_ab2a10479850ea02b88a9da760188f9e8a4288a047b5852fa2f2294b0486e923f3}{S\-W\-F\-\_\-\-U\-N\-C\-O\-M\-P\-R\-E\-S\-S\-E\-D} = 'F', 
+\hyperlink{swf_8h_ab2a10479850ea02b88a9da760188f9e8ad7d3f3489bcd8594930bf77d183c667c}{S\-W\-F\-\_\-\-Z\-L\-I\-B} = 'C', 
+\hyperlink{swf_8h_ab2a10479850ea02b88a9da760188f9e8a91eff326ea467c9819860dfd2745ef03}{S\-W\-F\-\_\-\-L\-Z\-M\-A} = 'Z'
+ \}
+\begin{DoxyCompactList}\small\item\em Compression methods used in \hyperlink{struct_s_w_f}{S\-W\-F} files. The first 8 bytes of every \hyperlink{struct_s_w_f}{S\-W\-F} file are always uncompressed. The first 3 are a signature, and the first byte is an A\-S\-C\-I\-I character representing the compression type used by the rest of the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$ \hyperlink{swf_8h_afcb9d969caa0ba858005c5ca561e299f}{swf\-\_\-parser\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Allocates an S\-W\-F\-Parser and accompanying \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\item 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error} \hyperlink{swf_8h_a1d448e0c6b1753c9cd12323a049cea74}{swf\-\_\-parser\-\_\-append} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser, const uint8\-\_\-t $\ast$buf, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Appends data to the parser's buffer. The data provided will be decompressed if necessary, and the parser will parse as many tags from the file as possible. \end{DoxyCompactList}\item 
+\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$ \hyperlink{swf_8h_a54521740ae6ff1f0b2e2c3ad38ce5316}{swf\-\_\-parser\-\_\-get\-\_\-swf} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser)
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{struct_s_w_f}{S\-W\-F} from a parser. \end{DoxyCompactList}\item 
+\hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} $\ast$ \hyperlink{swf_8h_a63ef0487d5599514ab59358943a66831}{swf\-\_\-parser\-\_\-get\-\_\-error} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser)
+\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from a parser. \end{DoxyCompactList}\item 
+\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$ \hyperlink{swf_8h_ae7bed96be09a81591b208f126492e5fe}{swf\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Allocates a \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\item 
+void \hyperlink{swf_8h_aeb4891b4c348c1ea92cbd9804c579c5e}{swf\-\_\-free} (\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$swf)
+\begin{DoxyCompactList}\small\item\em Free an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. \end{DoxyCompactList}\item 
+void \hyperlink{swf_8h_ae1bc056a2b319c7385daebd0e50f3e59}{swf\-\_\-tag\-\_\-free} (\hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} $\ast$tag)
+\begin{DoxyCompactList}\small\item\em Free an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. \end{DoxyCompactList}\item 
+void \hyperlink{swf_8h_a209a035918857f04457211df530be02d}{swf\-\_\-parser\-\_\-free} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser)
+\begin{DoxyCompactList}\small\item\em Free an S\-W\-F\-Parser and all associated data. \end{DoxyCompactList}\item 
+void \hyperlink{swf_8h_a8d940b2a1c618610bece4eebd1b5e656}{swf\-\_\-parser\-\_\-set\-\_\-callbacks} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser, \hyperlink{struct_s_w_f_parser_callbacks}{S\-W\-F\-Parser\-Callbacks} $\ast$callbacks)
+\begin{DoxyCompactList}\small\item\em Sets callbacks for an S\-W\-F\-Parser. \end{DoxyCompactList}\item 
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error} \hyperlink{swf_8h_a1fef6f757a709e8ea4670c589aa8592a}{swf\-\_\-add\-\_\-tag} (\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$swf, \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} $\ast$tag)
+\begin{DoxyCompactList}\small\item\em Adds an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} to an \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines all externally-\/accessible types and functions for libswf 
+
+Definition in file \hyperlink{swf_8h_source}{swf.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{\index{swf.\-h@{swf.\-h}!S\-W\-F\-Parser@{S\-W\-F\-Parser}}
+\index{S\-W\-F\-Parser@{S\-W\-F\-Parser}!swf.h@{swf.\-h}}
+\subsubsection[{S\-W\-F\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf S\-W\-F\-\_\-\-Parser} {\bf S\-W\-F\-Parser}}}\label{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}
+
+
+Opaque struct containing data used by the \hyperlink{struct_s_w_f}{S\-W\-F} parser. 
+
+
+
+Definition at line 209 of file swf.\-h.
+
+\hypertarget{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}{\index{swf.\-h@{swf.\-h}!S\-W\-F\-Parser\-Callback@{S\-W\-F\-Parser\-Callback}}
+\index{S\-W\-F\-Parser\-Callback@{S\-W\-F\-Parser\-Callback}!swf.h@{swf.\-h}}
+\subsubsection[{S\-W\-F\-Parser\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf S\-W\-F\-Error}($\ast$ S\-W\-F\-Parser\-Callback)({\bf S\-W\-F\-Parser} $\ast$parser, void $\ast$data, void $\ast$ctx)}}\label{swf_8h_a42e43a257dad85b4e1368d3a3de56cee}
+
+
+Function prototype used by callbacks. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser} & \hyperlink{struct_s_w_f}{S\-W\-F} Parser in use \\
+\hline
+\mbox{\tt in}  & {\em data} & Data relevant to callback; cast to whichever type it should be \\
+\hline
+\mbox{\tt in}  & {\em ctx} & S\-W\-F\-Parser\-Callbacks-\/$>$ctx \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\-W\-F\-Error indicating if something went wrong (often ignored). 
+\end{DoxyReturn}
+
+
+Definition at line 218 of file swf.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{swf_8h_ab2a10479850ea02b88a9da760188f9e8}{\index{swf.\-h@{swf.\-h}!S\-W\-F\-Compression@{S\-W\-F\-Compression}}
+\index{S\-W\-F\-Compression@{S\-W\-F\-Compression}!swf.h@{swf.\-h}}
+\subsubsection[{S\-W\-F\-Compression}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\-W\-F\-Compression}}}\label{swf_8h_ab2a10479850ea02b88a9da760188f9e8}
+
+
+Compression methods used in \hyperlink{struct_s_w_f}{S\-W\-F} files. The first 8 bytes of every \hyperlink{struct_s_w_f}{S\-W\-F} file are always uncompressed. The first 3 are a signature, and the first byte is an A\-S\-C\-I\-I character representing the compression type used by the rest of the file. 
+
+\begin{DoxySeeAlso}{See Also}
+\href{http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/devnet/swf/pdf/swf-file-format-spec.pdf}{\tt http\-://wwwimages.\-adobe.\-com/www.\-adobe.\-com/content/dam/\-Adobe/en/devnet/swf/pdf/swf-\/file-\/format-\/spec.\-pdf} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-W\-F\-\_\-\-U\-N\-C\-O\-M\-P\-R\-E\-S\-S\-E\-D@{S\-W\-F\-\_\-\-U\-N\-C\-O\-M\-P\-R\-E\-S\-S\-E\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-U\-N\-C\-O\-M\-P\-R\-E\-S\-S\-E\-D@{S\-W\-F\-\_\-\-U\-N\-C\-O\-M\-P\-R\-E\-S\-S\-E\-D}}\item[{\em 
+\hypertarget{swf_8h_ab2a10479850ea02b88a9da760188f9e8a4288a047b5852fa2f2294b0486e923f3}{S\-W\-F\-\_\-\-U\-N\-C\-O\-M\-P\-R\-E\-S\-S\-E\-D}\label{swf_8h_ab2a10479850ea02b88a9da760188f9e8a4288a047b5852fa2f2294b0486e923f3}
+}]No compression. \index{S\-W\-F\-\_\-\-Z\-L\-I\-B@{S\-W\-F\-\_\-\-Z\-L\-I\-B}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-Z\-L\-I\-B@{S\-W\-F\-\_\-\-Z\-L\-I\-B}}\item[{\em 
+\hypertarget{swf_8h_ab2a10479850ea02b88a9da760188f9e8ad7d3f3489bcd8594930bf77d183c667c}{S\-W\-F\-\_\-\-Z\-L\-I\-B}\label{swf_8h_ab2a10479850ea02b88a9da760188f9e8ad7d3f3489bcd8594930bf77d183c667c}
+}]Zlib D\-E\-F\-L\-A\-T\-E compression (requires zlib). \index{S\-W\-F\-\_\-\-L\-Z\-M\-A@{S\-W\-F\-\_\-\-L\-Z\-M\-A}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-L\-Z\-M\-A@{S\-W\-F\-\_\-\-L\-Z\-M\-A}}\item[{\em 
+\hypertarget{swf_8h_ab2a10479850ea02b88a9da760188f9e8a91eff326ea467c9819860dfd2745ef03}{S\-W\-F\-\_\-\-L\-Z\-M\-A}\label{swf_8h_ab2a10479850ea02b88a9da760188f9e8a91eff326ea467c9819860dfd2745ef03}
+}]L\-Z\-M\-A compression (builtin to libswf). \end{description}
+\end{Desc}
+
+
+Definition at line 142 of file swf.\-h.
+
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{\index{swf.\-h@{swf.\-h}!S\-W\-F\-Error@{S\-W\-F\-Error}}
+\index{S\-W\-F\-Error@{S\-W\-F\-Error}!swf.h@{swf.\-h}}
+\subsubsection[{S\-W\-F\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\-W\-F\-Error}}}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}
+
+
+Errors and other return values from libswf functions. 0 is a simple \char`\"{}\-O\-K\char`\"{}, values $>$0 are non-\/failures that include additional information, and values $<$0 are failures. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-W\-F\-\_\-\-O\-K@{S\-W\-F\-\_\-\-O\-K}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-O\-K@{S\-W\-F\-\_\-\-O\-K}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ac03121df54453b728c0659914461be27}{S\-W\-F\-\_\-\-O\-K}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ac03121df54453b728c0659914461be27}
+}]Success; nothing special to report. \index{S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A@{S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A@{S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a6e95c82dc1c95217bdf267738685640d}{S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a6e95c82dc1c95217bdf267738685640d}
+}]More data is required to finish an attempted operation. \index{S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D@{S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D@{S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a0c4acc0a8c30d8be5906cb687e8d89af}{S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a0c4acc0a8c30d8be5906cb687e8d89af}
+}]We're completely finished with a multi-\/call operation. \index{S\-W\-F\-\_\-\-I\-N\-V\-A\-L\-I\-D@{S\-W\-F\-\_\-\-I\-N\-V\-A\-L\-I\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-I\-N\-V\-A\-L\-I\-D@{S\-W\-F\-\_\-\-I\-N\-V\-A\-L\-I\-D}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ae7f54a60f4efe31e19bf7532e859d60b}{S\-W\-F\-\_\-\-I\-N\-V\-A\-L\-I\-D}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ae7f54a60f4efe31e19bf7532e859d60b}
+}]Invalid data was provided. \index{S\-W\-F\-\_\-\-U\-N\-I\-M\-P\-L\-E\-M\-E\-N\-T\-E\-D@{S\-W\-F\-\_\-\-U\-N\-I\-M\-P\-L\-E\-M\-E\-N\-T\-E\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-U\-N\-I\-M\-P\-L\-E\-M\-E\-N\-T\-E\-D@{S\-W\-F\-\_\-\-U\-N\-I\-M\-P\-L\-E\-M\-E\-N\-T\-E\-D}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ab282d4794abb1da20cf1fb2ed1736d38}{S\-W\-F\-\_\-\-U\-N\-I\-M\-P\-L\-E\-M\-E\-N\-T\-E\-D}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99ab282d4794abb1da20cf1fb2ed1736d38}
+}]A feature you're trying to use is unimplemented. \index{S\-W\-F\-\_\-\-U\-N\-K\-N\-O\-W\-N@{S\-W\-F\-\_\-\-U\-N\-K\-N\-O\-W\-N}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-U\-N\-K\-N\-O\-W\-N@{S\-W\-F\-\_\-\-U\-N\-K\-N\-O\-W\-N}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a4b29669f2284fee4052f6a6528cab291}{S\-W\-F\-\_\-\-U\-N\-K\-N\-O\-W\-N}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a4b29669f2284fee4052f6a6528cab291}
+}]Some error occurred, and we're not sure of the specifics. \index{S\-W\-F\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-E\-R\-R\-O\-R@{S\-W\-F\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-E\-R\-R\-O\-R}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-E\-R\-R\-O\-R@{S\-W\-F\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a045e554665373586d05f0a946022ab5a}{S\-W\-F\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-E\-R\-R\-O\-R}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a045e554665373586d05f0a946022ab5a}
+}]This means there's a bug in libswf. Patches welcome. \index{S\-W\-F\-\_\-\-N\-O\-M\-E\-M@{S\-W\-F\-\_\-\-N\-O\-M\-E\-M}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-N\-O\-M\-E\-M@{S\-W\-F\-\_\-\-N\-O\-M\-E\-M}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99af00c59f37247c67a393ab33ddb67b007}{S\-W\-F\-\_\-\-N\-O\-M\-E\-M}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99af00c59f37247c67a393ab33ddb67b007}
+}]Not enough memory was available to complete the operation. You should be able to retry the operation after freeing some. \index{S\-W\-F\-\_\-\-R\-E\-C\-O\-M\-P\-I\-L\-E@{S\-W\-F\-\_\-\-R\-E\-C\-O\-M\-P\-I\-L\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-R\-E\-C\-O\-M\-P\-I\-L\-E@{S\-W\-F\-\_\-\-R\-E\-C\-O\-M\-P\-I\-L\-E}}\item[{\em 
+\hypertarget{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a053ee1ae1038f461090bf163a02b32f6}{S\-W\-F\-\_\-\-R\-E\-C\-O\-M\-P\-I\-L\-E}\label{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99a053ee1ae1038f461090bf163a02b32f6}
+}]You attempted to use a feature that requires an external library that this libswf was not built with. \end{description}
+\end{Desc}
+
+
+Definition at line 40 of file swf.\-h.
+
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888}{\index{swf.\-h@{swf.\-h}!S\-W\-F\-Tag\-Type@{S\-W\-F\-Tag\-Type}}
+\index{S\-W\-F\-Tag\-Type@{S\-W\-F\-Tag\-Type}!swf.h@{swf.\-h}}
+\subsubsection[{S\-W\-F\-Tag\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\-W\-F\-Tag\-Type}}}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888}
+
+
+\hyperlink{struct_s_w_f}{S\-W\-F} tag types. 
+
+\begin{DoxySeeAlso}{See Also}
+\href{http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/devnet/swf/pdf/swf-file-format-spec.pdf}{\tt http\-://wwwimages.\-adobe.\-com/www.\-adobe.\-com/content/dam/\-Adobe/en/devnet/swf/pdf/swf-\/file-\/format-\/spec.\-pdf} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-W\-F\-\_\-\-E\-N\-D@{S\-W\-F\-\_\-\-E\-N\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-E\-N\-D@{S\-W\-F\-\_\-\-E\-N\-D}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a145777439ea20728d7f3d4ab23cbc102}{S\-W\-F\-\_\-\-E\-N\-D}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a145777439ea20728d7f3d4ab23cbc102}
+}]This tag must end every \hyperlink{struct_s_w_f}{S\-W\-F} file. We stop parsing when we see it. \index{S\-W\-F\-\_\-\-S\-H\-O\-W\-\_\-\-F\-R\-A\-M\-E@{S\-W\-F\-\_\-\-S\-H\-O\-W\-\_\-\-F\-R\-A\-M\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-H\-O\-W\-\_\-\-F\-R\-A\-M\-E@{S\-W\-F\-\_\-\-S\-H\-O\-W\-\_\-\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ad89f32aa4cbc4227bbdc93ba4af4d6e6}{S\-W\-F\-\_\-\-S\-H\-O\-W\-\_\-\-F\-R\-A\-M\-E}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ad89f32aa4cbc4227bbdc93ba4af4d6e6}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a298d2bbe82f1fcea657f3f69e33adf6d}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a298d2bbe82f1fcea657f3f69e33adf6d}
+}]\index{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T@{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T@{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ac11c9252ef35369195c58fa745eb700d}{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ac11c9252ef35369195c58fa745eb700d}
+}]\index{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T@{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T@{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aaa1571c3ab0739f89c11364b900e3d76}{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aaa1571c3ab0739f89c11364b900e3d76}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a67ced428975763c8d0d36b0f99e9c879}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a67ced428975763c8d0d36b0f99e9c879}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aa0d9002a05e266d27f29916b4014080c}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aa0d9002a05e266d27f29916b4014080c}
+}]\index{S\-W\-F\-\_\-\-J\-P\-E\-G\-\_\-\-T\-A\-B\-L\-E\-S@{S\-W\-F\-\_\-\-J\-P\-E\-G\-\_\-\-T\-A\-B\-L\-E\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-J\-P\-E\-G\-\_\-\-T\-A\-B\-L\-E\-S@{S\-W\-F\-\_\-\-J\-P\-E\-G\-\_\-\-T\-A\-B\-L\-E\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a5f4c37a79b819492550684a310aed752}{S\-W\-F\-\_\-\-J\-P\-E\-G\-\_\-\-T\-A\-B\-L\-E\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a5f4c37a79b819492550684a310aed752}
+}]\index{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D\-\_\-\-C\-O\-L\-O\-R@{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D\-\_\-\-C\-O\-L\-O\-R}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D\-\_\-\-C\-O\-L\-O\-R@{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D\-\_\-\-C\-O\-L\-O\-R}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ae4de0e0abfcd9ff2d21c284d06e319cf}{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-B\-A\-C\-K\-G\-R\-O\-U\-N\-D\-\_\-\-C\-O\-L\-O\-R}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ae4de0e0abfcd9ff2d21c284d06e319cf}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ac71cd32740370684dea8bfdefa57715a}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ac71cd32740370684dea8bfdefa57715a}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aabf3657b88a38e06caeb5dbc3bba992b}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aabf3657b88a38e06caeb5dbc3bba992b}
+}]\index{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-C\-T\-I\-O\-N@{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-C\-T\-I\-O\-N}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-C\-T\-I\-O\-N@{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-C\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a82640cbf386afee937bbfa7371cbc3d4}{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-C\-T\-I\-O\-N}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a82640cbf386afee937bbfa7371cbc3d4}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aa3c88fa93a756f9eeb976d2ae9aaaaaa}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aa3c88fa93a756f9eeb976d2ae9aaaaaa}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-O\-U\-N\-D@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-O\-U\-N\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-O\-U\-N\-D@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-O\-U\-N\-D}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a278f7e0c301900461f09c26fef567079}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-O\-U\-N\-D}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a278f7e0c301900461f09c26fef567079}
+}]\index{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D@{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D@{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aae76bdb2e7d9a457407a71231394bc0f}{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aae76bdb2e7d9a457407a71231394bc0f}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-S\-O\-U\-N\-D@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-S\-O\-U\-N\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-S\-O\-U\-N\-D@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-S\-O\-U\-N\-D}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aaa9c29b8180136cfe20a2da0a03c8fa6}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-S\-O\-U\-N\-D}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aaa9c29b8180136cfe20a2da0a03c8fa6}
+}]\index{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D@{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D@{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a4627693eeeb809fbaf5f5b3f00ed9b29}{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a4627693eeeb809fbaf5f5b3f00ed9b29}
+}]\index{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-B\-L\-O\-C\-K@{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-B\-L\-O\-C\-K}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-B\-L\-O\-C\-K@{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-B\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888abdab4ae8b7410b7817bc76a0fedf6099}{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-B\-L\-O\-C\-K}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888abdab4ae8b7410b7817bc76a0fedf6099}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a103228846a0d11daadd5d79104754624}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a103228846a0d11daadd5d79104754624}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888adf2b6cfc513815f89a0f6043dcc9ef07}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888adf2b6cfc513815f89a0f6043dcc9ef07}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a5dedda39b2968b47bf45833c27338ca0}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a5dedda39b2968b47bf45833c27338ca0}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-C\-X\-F\-O\-R\-M@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-C\-X\-F\-O\-R\-M}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-C\-X\-F\-O\-R\-M@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-C\-X\-F\-O\-R\-M}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a1a600f3a22f8df4f458ee8d562d52ff7}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-\-C\-X\-F\-O\-R\-M}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a1a600f3a22f8df4f458ee8d562d52ff7}
+}]\index{S\-W\-F\-\_\-\-P\-R\-O\-T\-E\-C\-T@{S\-W\-F\-\_\-\-P\-R\-O\-T\-E\-C\-T}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-P\-R\-O\-T\-E\-C\-T@{S\-W\-F\-\_\-\-P\-R\-O\-T\-E\-C\-T}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888af31bfa8f499776e70fe0121a59801e8d}{S\-W\-F\-\_\-\-P\-R\-O\-T\-E\-C\-T}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888af31bfa8f499776e70fe0121a59801e8d}
+}]\index{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2@{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2@{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888abd31b35a637f87485ed38fc606702482}{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888abd31b35a637f87485ed38fc606702482}
+}]\index{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2@{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2@{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a0f4532d37f5dd017ba3f9208ee3027ad}{S\-W\-F\-\_\-\-R\-E\-M\-O\-V\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a0f4532d37f5dd017ba3f9208ee3027ad}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-3@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-3}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-3@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-3}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a3342c068cc7d4d1a0306cd2ce02dde2e}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-3}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a3342c068cc7d4d1a0306cd2ce02dde2e}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ad8ddfc80ff71f2db86fa66d8fa584c8e}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-T\-E\-X\-T\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ad8ddfc80ff71f2db86fa66d8fa584c8e}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a46c082cee05cf10c22b4b8cac7c2b95d}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-U\-T\-T\-O\-N\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a46c082cee05cf10c22b4b8cac7c2b95d}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-3@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-3}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-3@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-3}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a3f0fac20877efe7b72e64c8e78d394a1}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-3}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a3f0fac20877efe7b72e64c8e78d394a1}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a2985f139ee841e521f1c1875662bbcd0}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-L\-O\-S\-S\-L\-E\-S\-S\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a2985f139ee841e521f1c1875662bbcd0}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-E\-D\-I\-T\-\_\-\-T\-E\-X\-T@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-E\-D\-I\-T\-\_\-\-T\-E\-X\-T}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-E\-D\-I\-T\-\_\-\-T\-E\-X\-T@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-E\-D\-I\-T\-\_\-\-T\-E\-X\-T}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aacb52b9e5ef0640e6458430c7c13f660}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-E\-D\-I\-T\-\_\-\-T\-E\-X\-T}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aacb52b9e5ef0640e6458430c7c13f660}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-P\-R\-I\-T\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-P\-R\-I\-T\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-P\-R\-I\-T\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-P\-R\-I\-T\-E}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a5488bb0999c1eac4d0ca43b457ac4f74}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-P\-R\-I\-T\-E}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a5488bb0999c1eac4d0ca43b457ac4f74}
+}]\index{S\-W\-F\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L@{S\-W\-F\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L@{S\-W\-F\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a4280fbc95af8415fd5974ab25cba3cbe}{S\-W\-F\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a4280fbc95af8415fd5974ab25cba3cbe}
+}]\index{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D\-\_\-2@{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D\-\_\-2@{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a068580fda9b74e3921a2a3270df581a0}{S\-W\-F\-\_\-\-S\-O\-U\-N\-D\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-H\-E\-A\-D\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a068580fda9b74e3921a2a3270df581a0}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a174abd6b01794cd00b9550cfd3c0a937}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a174abd6b01794cd00b9550cfd3c0a937}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ab17f1e2733cb421fef6e120813dfb788}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ab17f1e2733cb421fef6e120813dfb788}
+}]\index{S\-W\-F\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S@{S\-W\-F\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S@{S\-W\-F\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ab68628ccf15b6b1a97e117598da71dbd}{S\-W\-F\-\_\-\-E\-X\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ab68628ccf15b6b1a97e117598da71dbd}
+}]\index{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S@{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S@{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aba7bfc74da00943f494f3721135c79f8}{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aba7bfc74da00943f494f3721135c79f8}
+}]\index{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R@{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R@{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888abadada039a7bf9e3dd5da7cb9b4c299d}{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888abadada039a7bf9e3dd5da7cb9b4c299d}
+}]\index{S\-W\-F\-\_\-\-D\-O\-\_\-\-I\-N\-I\-T\-\_\-\-A\-C\-T\-I\-O\-N@{S\-W\-F\-\_\-\-D\-O\-\_\-\-I\-N\-I\-T\-\_\-\-A\-C\-T\-I\-O\-N}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-O\-\_\-\-I\-N\-I\-T\-\_\-\-A\-C\-T\-I\-O\-N@{S\-W\-F\-\_\-\-D\-O\-\_\-\-I\-N\-I\-T\-\_\-\-A\-C\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a87eb83ea33b0f4d06a87583134749cf9}{S\-W\-F\-\_\-\-D\-O\-\_\-\-I\-N\-I\-T\-\_\-\-A\-C\-T\-I\-O\-N}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a87eb83ea33b0f4d06a87583134749cf9}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-V\-I\-D\-E\-O\-\_\-\-S\-T\-R\-E\-A\-M@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-V\-I\-D\-E\-O\-\_\-\-S\-T\-R\-E\-A\-M}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-V\-I\-D\-E\-O\-\_\-\-S\-T\-R\-E\-A\-M@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-V\-I\-D\-E\-O\-\_\-\-S\-T\-R\-E\-A\-M}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a719ce536e69a657ab9106b5167843d77}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-V\-I\-D\-E\-O\-\_\-\-S\-T\-R\-E\-A\-M}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a719ce536e69a657ab9106b5167843d77}
+}]\index{S\-W\-F\-\_\-\-V\-I\-D\-E\-O\-\_\-\-F\-R\-A\-M\-E@{S\-W\-F\-\_\-\-V\-I\-D\-E\-O\-\_\-\-F\-R\-A\-M\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-V\-I\-D\-E\-O\-\_\-\-F\-R\-A\-M\-E@{S\-W\-F\-\_\-\-V\-I\-D\-E\-O\-\_\-\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ad52e85df77ac95acd4f84849d715ff47}{S\-W\-F\-\_\-\-V\-I\-D\-E\-O\-\_\-\-F\-R\-A\-M\-E}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ad52e85df77ac95acd4f84849d715ff47}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aefe3fa5fef89bfd14ddfcc61e5cdcfa3}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-I\-N\-F\-O\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aefe3fa5fef89bfd14ddfcc61e5cdcfa3}
+}]\index{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R\-\_\-2@{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R\-\_\-2@{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888afc52fc4f1f50d3e94e7a8659b1a5377a}{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G\-G\-E\-R\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888afc52fc4f1f50d3e94e7a8659b1a5377a}
+}]\index{S\-W\-F\-\_\-\-S\-C\-R\-I\-P\-T\-\_\-\-L\-I\-M\-I\-T\-S@{S\-W\-F\-\_\-\-S\-C\-R\-I\-P\-T\-\_\-\-L\-I\-M\-I\-T\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-C\-R\-I\-P\-T\-\_\-\-L\-I\-M\-I\-T\-S@{S\-W\-F\-\_\-\-S\-C\-R\-I\-P\-T\-\_\-\-L\-I\-M\-I\-T\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a27d8cc642ecb1445417bada978e1294f}{S\-W\-F\-\_\-\-S\-C\-R\-I\-P\-T\-\_\-\-L\-I\-M\-I\-T\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a27d8cc642ecb1445417bada978e1294f}
+}]\index{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-T\-A\-B\-\_\-\-I\-N\-D\-E\-X@{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-T\-A\-B\-\_\-\-I\-N\-D\-E\-X}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-T\-A\-B\-\_\-\-I\-N\-D\-E\-X@{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-T\-A\-B\-\_\-\-I\-N\-D\-E\-X}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a75b969c7816f59bd267418b6aef72cb8}{S\-W\-F\-\_\-\-S\-E\-T\-\_\-\-T\-A\-B\-\_\-\-I\-N\-D\-E\-X}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a75b969c7816f59bd267418b6aef72cb8}
+}]\index{S\-W\-F\-\_\-\-F\-I\-L\-E\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-S@{S\-W\-F\-\_\-\-F\-I\-L\-E\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-F\-I\-L\-E\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-S@{S\-W\-F\-\_\-\-F\-I\-L\-E\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a181cde2ef61dfec4db6bb9b6b0d764e0}{S\-W\-F\-\_\-\-F\-I\-L\-E\-\_\-\-A\-T\-T\-R\-I\-B\-U\-T\-E\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a181cde2ef61dfec4db6bb9b6b0d764e0}
+}]\index{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-3@{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-3}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-3@{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-3}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888aba1cc858bac94cc1acfa81eba93560ca}{S\-W\-F\-\_\-\-P\-L\-A\-C\-E\-\_\-\-O\-B\-J\-E\-C\-T\-\_\-3}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888aba1cc858bac94cc1acfa81eba93560ca}
+}]\index{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S\-\_\-2@{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S\-\_\-2@{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a36b9502fc5f2d2315fc35062637f6d7c}{S\-W\-F\-\_\-\-I\-M\-P\-O\-R\-T\-\_\-\-A\-S\-S\-E\-T\-S\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a36b9502fc5f2d2315fc35062637f6d7c}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-A\-L\-I\-G\-N\-\_\-\-Z\-O\-N\-E\-S@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-A\-L\-I\-G\-N\-\_\-\-Z\-O\-N\-E\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-A\-L\-I\-G\-N\-\_\-\-Z\-O\-N\-E\-S@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-A\-L\-I\-G\-N\-\_\-\-Z\-O\-N\-E\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a381ee91d43302a84a58d8ccf1651ccd6}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-A\-L\-I\-G\-N\-\_\-\-Z\-O\-N\-E\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a381ee91d43302a84a58d8ccf1651ccd6}
+}]\index{S\-W\-F\-\_\-\-C\-S\-M\-\_\-\-T\-E\-X\-T\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S@{S\-W\-F\-\_\-\-C\-S\-M\-\_\-\-T\-E\-X\-T\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-C\-S\-M\-\_\-\-T\-E\-X\-T\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S@{S\-W\-F\-\_\-\-C\-S\-M\-\_\-\-T\-E\-X\-T\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a4210216a5dc16e49a20964b5214ef1ea}{S\-W\-F\-\_\-\-C\-S\-M\-\_\-\-T\-E\-X\-T\-\_\-\-S\-E\-T\-T\-I\-N\-G\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a4210216a5dc16e49a20964b5214ef1ea}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-3@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-3}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-3@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-3}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a42f45e63b401bda0f5bc7bd2e56cbb7c}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-3}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a42f45e63b401bda0f5bc7bd2e56cbb7c}
+}]\index{S\-W\-F\-\_\-\-S\-Y\-M\-B\-O\-L\-\_\-\-C\-L\-A\-S\-S@{S\-W\-F\-\_\-\-S\-Y\-M\-B\-O\-L\-\_\-\-C\-L\-A\-S\-S}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-Y\-M\-B\-O\-L\-\_\-\-C\-L\-A\-S\-S@{S\-W\-F\-\_\-\-S\-Y\-M\-B\-O\-L\-\_\-\-C\-L\-A\-S\-S}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ac09ba1238e35915faa9a5e3fefcb8a50}{S\-W\-F\-\_\-\-S\-Y\-M\-B\-O\-L\-\_\-\-C\-L\-A\-S\-S}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ac09ba1238e35915faa9a5e3fefcb8a50}
+}]\index{S\-W\-F\-\_\-\-M\-E\-T\-A\-D\-A\-T\-A@{S\-W\-F\-\_\-\-M\-E\-T\-A\-D\-A\-T\-A}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-M\-E\-T\-A\-D\-A\-T\-A@{S\-W\-F\-\_\-\-M\-E\-T\-A\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a341e98f95459c6368421186daa1c78b6}{S\-W\-F\-\_\-\-M\-E\-T\-A\-D\-A\-T\-A}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a341e98f95459c6368421186daa1c78b6}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-G\-R\-I\-D@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-G\-R\-I\-D}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-G\-R\-I\-D@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-G\-R\-I\-D}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a7226625e6b9289cffca534136b1e3254}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-A\-L\-I\-N\-G\-\_\-\-G\-R\-I\-D}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a7226625e6b9289cffca534136b1e3254}
+}]\index{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-B\-C@{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-B\-C}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-B\-C@{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-B\-C}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ae64c54fd69c8444f138bdc6295f444fd}{S\-W\-F\-\_\-\-D\-O\-\_\-\-A\-B\-C}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ae64c54fd69c8444f138bdc6295f444fd}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-4@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-4}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-4@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-4}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ac814a55aaed0f5ccbcb4d75739c71c79}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-H\-A\-P\-E\-\_\-4}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ac814a55aaed0f5ccbcb4d75739c71c79}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E\-\_\-2@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ac9c30222cd385fe6a3c3fd5aa8d59d73}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-M\-O\-R\-P\-H\-\_\-\-S\-H\-A\-P\-E\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ac9c30222cd385fe6a3c3fd5aa8d59d73}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-E\-N\-E\-\_\-\-A\-N\-D\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L\-\_\-\-D\-A\-T\-A@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-E\-N\-E\-\_\-\-A\-N\-D\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L\-\_\-\-D\-A\-T\-A}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-E\-N\-E\-\_\-\-A\-N\-D\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L\-\_\-\-D\-A\-T\-A@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-E\-N\-E\-\_\-\-A\-N\-D\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a2e80c07352fade089f88c49446cdd58f}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-S\-C\-E\-N\-E\-\_\-\-A\-N\-D\-\_\-\-F\-R\-A\-M\-E\-\_\-\-L\-A\-B\-E\-L\-\_\-\-D\-A\-T\-A}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a2e80c07352fade089f88c49446cdd58f}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-D\-A\-T\-A@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-D\-A\-T\-A}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-D\-A\-T\-A@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888af2e4bcd2e37577677a97cc5e25a83a55}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-N\-A\-R\-Y\-\_\-\-D\-A\-T\-A}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888af2e4bcd2e37577677a97cc5e25a83a55}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-N\-A\-M\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-N\-A\-M\-E}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-N\-A\-M\-E@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-N\-A\-M\-E}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ad9564f401b0afa640d3f091df38f3e2f}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-\-N\-A\-M\-E}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ad9564f401b0afa640d3f091df38f3e2f}
+}]\index{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D\-\_\-2@{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D\-\_\-2}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D\-\_\-2@{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D\-\_\-2}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a2f4d8cf60b0cd0741b680c3c7f889653}{S\-W\-F\-\_\-\-S\-T\-A\-R\-T\-\_\-\-S\-O\-U\-N\-D\-\_\-2}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a2f4d8cf60b0cd0741b680c3c7f889653}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-4@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-4}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-4@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-4}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a09676b3835492ff0ab2a6193eac9695b}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-B\-I\-T\-S\-\_\-\-J\-P\-E\-G\-\_\-4}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a09676b3835492ff0ab2a6193eac9695b}
+}]\index{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-4@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-4}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-4@{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-4}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888ac07d01421c751a1242036ae04270e53e}{S\-W\-F\-\_\-\-D\-E\-F\-I\-N\-E\-\_\-\-F\-O\-N\-T\-\_\-4}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888ac07d01421c751a1242036ae04270e53e}
+}]\index{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-T\-E\-L\-E\-M\-E\-T\-R\-Y@{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-T\-E\-L\-E\-M\-E\-T\-R\-Y}!swf.\-h@{swf.\-h}}\index{swf.\-h@{swf.\-h}!S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-T\-E\-L\-E\-M\-E\-T\-R\-Y@{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-T\-E\-L\-E\-M\-E\-T\-R\-Y}}\item[{\em 
+\hypertarget{swf_8h_a2197ad52b3b2be681014c5c07653c888a14cbba29e890ccc78187e7882c8d3734}{S\-W\-F\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-T\-E\-L\-E\-M\-E\-T\-R\-Y}\label{swf_8h_a2197ad52b3b2be681014c5c07653c888a14cbba29e890ccc78187e7882c8d3734}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 67 of file swf.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{swf_8h_a1fef6f757a709e8ea4670c589aa8592a}{\index{swf.\-h@{swf.\-h}!swf\-\_\-add\-\_\-tag@{swf\-\_\-add\-\_\-tag}}
+\index{swf\-\_\-add\-\_\-tag@{swf\-\_\-add\-\_\-tag}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-add\-\_\-tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Error} swf\-\_\-add\-\_\-tag (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F} $\ast$}]{swf, }
+\item[{{\bf S\-W\-F\-Tag} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_a1fef6f757a709e8ea4670c589aa8592a}
+
+
+Adds an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} to an \hyperlink{struct_s_w_f}{S\-W\-F}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em swf} & \hyperlink{struct_s_w_f}{S\-W\-F} to add a tag to \\
+\hline
+\mbox{\tt in}  & {\em tag} & tag to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$ 0 if something went wrong. 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file parser.\-c.
+
+\hypertarget{swf_8h_aeb4891b4c348c1ea92cbd9804c579c5e}{\index{swf.\-h@{swf.\-h}!swf\-\_\-free@{swf\-\_\-free}}
+\index{swf\-\_\-free@{swf\-\_\-free}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void swf\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F} $\ast$}]{swf}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_aeb4891b4c348c1ea92cbd9804c579c5e}
+
+
+Free an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em swf} & \hyperlink{struct_s_w_f}{S\-W\-F} to free \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file swf.\-c.
+
+\hypertarget{swf_8h_ae7bed96be09a81591b208f126492e5fe}{\index{swf.\-h@{swf.\-h}!swf\-\_\-init@{swf\-\_\-init}}
+\index{swf\-\_\-init@{swf\-\_\-init}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F}$\ast$ swf\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_ae7bed96be09a81591b208f126492e5fe}
+
+
+Allocates a \hyperlink{struct_s_w_f}{S\-W\-F}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer if the \hyperlink{struct_s_w_f}{S\-W\-F} could be allocated; N\-U\-L\-L otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file swf.\-c.
+
+\hypertarget{swf_8h_a1d448e0c6b1753c9cd12323a049cea74}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-append@{swf\-\_\-parser\-\_\-append}}
+\index{swf\-\_\-parser\-\_\-append@{swf\-\_\-parser\-\_\-append}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-parser\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Error} swf\-\_\-parser\-\_\-append (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Parser} $\ast$}]{parser, }
+\item[{const uint8\-\_\-t $\ast$}]{buf, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_a1d448e0c6b1753c9cd12323a049cea74}
+
+
+Appends data to the parser's buffer. The data provided will be decompressed if necessary, and the parser will parse as many tags from the file as possible. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser} & S\-W\-F\-Parser to append to \\
+\hline
+\mbox{\tt in}  & {\em buf} & \hyperlink{struct_buffer}{Buffer} to parse \\
+\hline
+\mbox{\tt in}  & {\em len} & Size of buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\-W\-F\-\_\-\-O\-K if at least one tag could be parsed. S\-W\-F\-\_\-\-N\-E\-E\-D\-\_\-\-M\-O\-R\-E\-\_\-\-D\-A\-T\-A if no tags could be parsed because buf wasn't long enough. S\-W\-F\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D if an E\-N\-D tag has been parsed. S\-W\-F\-Error $<$ 0 if something went wrong. 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file parser.\-c.
+
+\hypertarget{swf_8h_a209a035918857f04457211df530be02d}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-free@{swf\-\_\-parser\-\_\-free}}
+\index{swf\-\_\-parser\-\_\-free@{swf\-\_\-parser\-\_\-free}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-parser\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void swf\-\_\-parser\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Parser} $\ast$}]{parser}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_a209a035918857f04457211df530be02d}
+
+
+Free an S\-W\-F\-Parser and all associated data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser} & S\-W\-F\-Parser to free \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 360 of file parser.\-c.
+
+\hypertarget{swf_8h_a63ef0487d5599514ab59358943a66831}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-get\-\_\-error@{swf\-\_\-parser\-\_\-get\-\_\-error}}
+\index{swf\-\_\-parser\-\_\-get\-\_\-error@{swf\-\_\-parser\-\_\-get\-\_\-error}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-parser\-\_\-get\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Error\-Desc}$\ast$ swf\-\_\-parser\-\_\-get\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Parser} $\ast$}]{parser}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_a63ef0487d5599514ab59358943a66831}
+
+
+Sets the \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from a parser. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser} & Parser to get an error from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from parser 
+\end{DoxyReturn}
+
+
+Definition at line 356 of file parser.\-c.
+
+\hypertarget{swf_8h_a54521740ae6ff1f0b2e2c3ad38ce5316}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-get\-\_\-swf@{swf\-\_\-parser\-\_\-get\-\_\-swf}}
+\index{swf\-\_\-parser\-\_\-get\-\_\-swf@{swf\-\_\-parser\-\_\-get\-\_\-swf}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-parser\-\_\-get\-\_\-swf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F}$\ast$ swf\-\_\-parser\-\_\-get\-\_\-swf (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Parser} $\ast$}]{parser}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_a54521740ae6ff1f0b2e2c3ad38ce5316}
+
+
+Gets the \hyperlink{struct_s_w_f}{S\-W\-F} from a parser. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser} & Parser to get an \hyperlink{struct_s_w_f}{S\-W\-F} from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to \hyperlink{struct_s_w_f}{S\-W\-F} from parser 
+\end{DoxyReturn}
+
+
+Definition at line 352 of file parser.\-c.
+
+\hypertarget{swf_8h_afcb9d969caa0ba858005c5ca561e299f}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-init@{swf\-\_\-parser\-\_\-init}}
+\index{swf\-\_\-parser\-\_\-init@{swf\-\_\-parser\-\_\-init}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-parser\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser}$\ast$ swf\-\_\-parser\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_afcb9d969caa0ba858005c5ca561e299f}
+
+
+Allocates an S\-W\-F\-Parser and accompanying \hyperlink{struct_s_w_f}{S\-W\-F}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer if the parser and \hyperlink{struct_s_w_f}{S\-W\-F} could be allocated; N\-U\-L\-L otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 340 of file parser.\-c.
+
+\hypertarget{swf_8h_a8d940b2a1c618610bece4eebd1b5e656}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-set\-\_\-callbacks@{swf\-\_\-parser\-\_\-set\-\_\-callbacks}}
+\index{swf\-\_\-parser\-\_\-set\-\_\-callbacks@{swf\-\_\-parser\-\_\-set\-\_\-callbacks}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-parser\-\_\-set\-\_\-callbacks}]{\setlength{\rightskip}{0pt plus 5cm}void swf\-\_\-parser\-\_\-set\-\_\-callbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Parser} $\ast$}]{parser, }
+\item[{{\bf S\-W\-F\-Parser\-Callbacks} $\ast$}]{callbacks}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_a8d940b2a1c618610bece4eebd1b5e656}
+
+
+Sets callbacks for an S\-W\-F\-Parser. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parser} & S\-W\-F\-Parser to set callbacks for \\
+\hline
+\mbox{\tt in}  & {\em callbacks} & \hyperlink{struct_s_w_f_parser_callbacks}{S\-W\-F\-Parser\-Callbacks} to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 368 of file parser.\-c.
+
+\hypertarget{swf_8h_ae1bc056a2b319c7385daebd0e50f3e59}{\index{swf.\-h@{swf.\-h}!swf\-\_\-tag\-\_\-free@{swf\-\_\-tag\-\_\-free}}
+\index{swf\-\_\-tag\-\_\-free@{swf\-\_\-tag\-\_\-free}!swf.h@{swf.\-h}}
+\subsubsection[{swf\-\_\-tag\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void swf\-\_\-tag\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-W\-F\-Tag} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)}}\label{swf_8h_ae1bc056a2b319c7385daebd0e50f3e59}
+
+
+Free an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tag} & S\-W\-Ftag to free \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file swf.\-c.
+

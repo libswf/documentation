@@ -182,10 +182,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="swf_8h.html#ac5e09b34f3a970beec42aa757ffb3e99">SWFError</a> buf_grow_to(<a class="code" href="struct_buffer.html">Buffer</a> *buffer, <span class="keywordtype">size_t</span> size){</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span>(size &lt; buffer-&gt;size)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="swf_8h.html#ac5e09b34f3a970beec42aa757ffb3e99a045e554665373586d05f0a946022ab5a">SWF_INTERNAL_ERROR</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> set_error(buffer, <a class="code" href="swf_8h.html#ac5e09b34f3a970beec42aa757ffb3e99a045e554665373586d05f0a946022ab5a">SWF_INTERNAL_ERROR</a>, <span class="stringliteral">&quot;buf_grow_to: size &lt; buffer-&gt;size&quot;</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    uint8_t *new_buf = malloc(size);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span>(!new_buf)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="swf_8h.html#ac5e09b34f3a970beec42aa757ffb3e99af00c59f37247c67a393ab33ddb67b007">SWF_NOMEM</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> set_error(buffer, <a class="code" href="swf_8h.html#ac5e09b34f3a970beec42aa757ffb3e99af00c59f37247c67a393ab33ddb67b007">SWF_NOMEM</a>, <span class="stringliteral">&quot;buf_grow_to: malloc failed&quot;</span>);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    memcpy(new_buf, buffer-&gt;<a class="code" href="struct_buffer.html#a31a306e12a70a812149b2eaf22279ea5">ptr</a>, buffer-&gt;<a class="code" href="struct_buffer.html#a24e94f119f4b386771c78cf37aaff41b">size</a>);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    free(buffer-&gt;<a class="code" href="struct_buffer.html#a18c1ecd1f7dc2dbeb5f576aecca97560">alloc_ptr</a>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    buffer-&gt;<a class="code" href="struct_buffer.html#a18c1ecd1f7dc2dbeb5f576aecca97560">alloc_ptr</a> = buffer-&gt;<a class="code" href="struct_buffer.html#a31a306e12a70a812149b2eaf22279ea5">ptr</a> = new_buf;</div>
@@ -293,7 +293,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 27 2014 20:00:14 for libswf by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Apr 30 2014 17:50:58 for libswf by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

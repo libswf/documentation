@@ -136,20 +136,20 @@ enum \hyperlink{swf_8h_ab2a10479850ea02b88a9da760188f9e8}{S\-W\-F\-Compression} 
 \item 
 \hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$ \hyperlink{swf_8h_afcb9d969caa0ba858005c5ca561e299f}{swf\-\_\-parser\-\_\-init} (void)
 \begin{DoxyCompactList}\small\item\em Allocates an S\-W\-F\-Parser and accompanying \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\item 
-\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error} \hyperlink{swf_8h_a1d448e0c6b1753c9cd12323a049cea74}{swf\-\_\-parser\-\_\-append} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser, const uint8\-\_\-t $\ast$buf, size\-\_\-t len)
+\hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error} \hyperlink{swf_8h_af6f0cbce71b49230874a7613b82c3900}{swf\-\_\-parser\-\_\-append} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser, const void $\ast$buf, size\-\_\-t len)
 \begin{DoxyCompactList}\small\item\em Appends data to the parser's buffer. The data provided will be decompressed if necessary, and the parser will parse as many tags from the file as possible. \end{DoxyCompactList}\item 
 \hyperlink{struct_s_w_f}{S\-W\-F} $\ast$ \hyperlink{swf_8h_a54521740ae6ff1f0b2e2c3ad38ce5316}{swf\-\_\-parser\-\_\-get\-\_\-swf} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser)
 \begin{DoxyCompactList}\small\item\em Gets the \hyperlink{struct_s_w_f}{S\-W\-F} from a parser. \end{DoxyCompactList}\item 
 \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} $\ast$ \hyperlink{swf_8h_a63ef0487d5599514ab59358943a66831}{swf\-\_\-parser\-\_\-get\-\_\-error} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser)
-\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from a parser. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from a parser. \end{DoxyCompactList}\item 
 \hyperlink{struct_s_w_f}{S\-W\-F} $\ast$ \hyperlink{swf_8h_ae7bed96be09a81591b208f126492e5fe}{swf\-\_\-init} (void)
 \begin{DoxyCompactList}\small\item\em Allocates a \hyperlink{struct_s_w_f}{S\-W\-F}. \end{DoxyCompactList}\item 
 void \hyperlink{swf_8h_aeb4891b4c348c1ea92cbd9804c579c5e}{swf\-\_\-free} (\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$swf)
-\begin{DoxyCompactList}\small\item\em Free an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Frees an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. \end{DoxyCompactList}\item 
 void \hyperlink{swf_8h_ae1bc056a2b319c7385daebd0e50f3e59}{swf\-\_\-tag\-\_\-free} (\hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} $\ast$tag)
-\begin{DoxyCompactList}\small\item\em Free an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Frees an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. \end{DoxyCompactList}\item 
 void \hyperlink{swf_8h_a209a035918857f04457211df530be02d}{swf\-\_\-parser\-\_\-free} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser)
-\begin{DoxyCompactList}\small\item\em Free an S\-W\-F\-Parser and all associated data. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Frees an S\-W\-F\-Parser and all associated data. \end{DoxyCompactList}\item 
 void \hyperlink{swf_8h_a8d940b2a1c618610bece4eebd1b5e656}{swf\-\_\-parser\-\_\-set\-\_\-callbacks} (\hyperlink{swf_8h_a20ea0a5956d5a61c7f3bcd3d5fe73325}{S\-W\-F\-Parser} $\ast$parser, \hyperlink{struct_s_w_f_parser_callbacks}{S\-W\-F\-Parser\-Callbacks} $\ast$callbacks)
 \begin{DoxyCompactList}\small\item\em Sets callbacks for an S\-W\-F\-Parser. \end{DoxyCompactList}\item 
 \hyperlink{swf_8h_ac5e09b34f3a970beec42aa757ffb3e99}{S\-W\-F\-Error} \hyperlink{swf_8h_a1fef6f757a709e8ea4670c589aa8592a}{swf\-\_\-add\-\_\-tag} (\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$swf, \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag} $\ast$tag)
@@ -447,7 +447,7 @@ Definition at line 120 of file parser.\-c.
 )}}\label{swf_8h_aeb4891b4c348c1ea92cbd9804c579c5e}
 
 
-Free an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. 
+Frees an \hyperlink{struct_s_w_f}{S\-W\-F} and all associated data. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -476,15 +476,15 @@ Pointer if the \hyperlink{struct_s_w_f}{S\-W\-F} could be allocated; N\-U\-L\-L 
 
 Definition at line 22 of file swf.\-c.
 
-\hypertarget{swf_8h_a1d448e0c6b1753c9cd12323a049cea74}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-append@{swf\-\_\-parser\-\_\-append}}
+\hypertarget{swf_8h_af6f0cbce71b49230874a7613b82c3900}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-append@{swf\-\_\-parser\-\_\-append}}
 \index{swf\-\_\-parser\-\_\-append@{swf\-\_\-parser\-\_\-append}!swf.h@{swf.\-h}}
 \subsubsection[{swf\-\_\-parser\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Error} swf\-\_\-parser\-\_\-append (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-W\-F\-Parser} $\ast$}]{parser, }
-\item[{const uint8\-\_\-t $\ast$}]{buf, }
+\item[{const void $\ast$}]{buf, }
 \item[{size\-\_\-t}]{len}
 \end{DoxyParamCaption}
-)}}\label{swf_8h_a1d448e0c6b1753c9cd12323a049cea74}
+)}}\label{swf_8h_af6f0cbce71b49230874a7613b82c3900}
 
 
 Appends data to the parser's buffer. The data provided will be decompressed if necessary, and the parser will parse as many tags from the file as possible. 
@@ -514,7 +514,7 @@ Definition at line 257 of file parser.\-c.
 )}}\label{swf_8h_a209a035918857f04457211df530be02d}
 
 
-Free an S\-W\-F\-Parser and all associated data. 
+Frees an S\-W\-F\-Parser and all associated data. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -523,7 +523,7 @@ Free an S\-W\-F\-Parser and all associated data.
 \end{DoxyParams}
 
 
-Definition at line 360 of file parser.\-c.
+Definition at line 363 of file parser.\-c.
 
 \hypertarget{swf_8h_a63ef0487d5599514ab59358943a66831}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-get\-\_\-error@{swf\-\_\-parser\-\_\-get\-\_\-error}}
 \index{swf\-\_\-parser\-\_\-get\-\_\-error@{swf\-\_\-parser\-\_\-get\-\_\-error}!swf.h@{swf.\-h}}
@@ -534,7 +534,7 @@ Definition at line 360 of file parser.\-c.
 )}}\label{swf_8h_a63ef0487d5599514ab59358943a66831}
 
 
-Sets the \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from a parser. 
+Gets the \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from a parser. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -546,7 +546,7 @@ Pointer to \hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} from parser
 \end{DoxyReturn}
 
 
-Definition at line 356 of file parser.\-c.
+Definition at line 359 of file parser.\-c.
 
 \hypertarget{swf_8h_a54521740ae6ff1f0b2e2c3ad38ce5316}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-get\-\_\-swf@{swf\-\_\-parser\-\_\-get\-\_\-swf}}
 \index{swf\-\_\-parser\-\_\-get\-\_\-swf@{swf\-\_\-parser\-\_\-get\-\_\-swf}!swf.h@{swf.\-h}}
@@ -569,7 +569,7 @@ Pointer to \hyperlink{struct_s_w_f}{S\-W\-F} from parser
 \end{DoxyReturn}
 
 
-Definition at line 352 of file parser.\-c.
+Definition at line 355 of file parser.\-c.
 
 \hypertarget{swf_8h_afcb9d969caa0ba858005c5ca561e299f}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-init@{swf\-\_\-parser\-\_\-init}}
 \index{swf\-\_\-parser\-\_\-init@{swf\-\_\-parser\-\_\-init}!swf.h@{swf.\-h}}
@@ -587,7 +587,7 @@ Pointer if the parser and \hyperlink{struct_s_w_f}{S\-W\-F} could be allocated; 
 \end{DoxyReturn}
 
 
-Definition at line 340 of file parser.\-c.
+Definition at line 343 of file parser.\-c.
 
 \hypertarget{swf_8h_a8d940b2a1c618610bece4eebd1b5e656}{\index{swf.\-h@{swf.\-h}!swf\-\_\-parser\-\_\-set\-\_\-callbacks@{swf\-\_\-parser\-\_\-set\-\_\-callbacks}}
 \index{swf\-\_\-parser\-\_\-set\-\_\-callbacks@{swf\-\_\-parser\-\_\-set\-\_\-callbacks}!swf.h@{swf.\-h}}
@@ -610,7 +610,7 @@ Sets callbacks for an S\-W\-F\-Parser.
 \end{DoxyParams}
 
 
-Definition at line 368 of file parser.\-c.
+Definition at line 371 of file parser.\-c.
 
 \hypertarget{swf_8h_ae1bc056a2b319c7385daebd0e50f3e59}{\index{swf.\-h@{swf.\-h}!swf\-\_\-tag\-\_\-free@{swf\-\_\-tag\-\_\-free}}
 \index{swf\-\_\-tag\-\_\-free@{swf\-\_\-tag\-\_\-free}!swf.h@{swf.\-h}}
@@ -621,7 +621,7 @@ Definition at line 368 of file parser.\-c.
 )}}\label{swf_8h_ae1bc056a2b319c7385daebd0e50f3e59}
 
 
-Free an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. 
+Frees an \hyperlink{struct_s_w_f_tag}{S\-W\-F\-Tag}'s associated data. Does not call free() on the tag itself. 
 
 
 \begin{DoxyParams}[1]{Parameters}

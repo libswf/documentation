@@ -1,78 +1,77 @@
-\hypertarget{struct_s_w_f_tag}{\section{S\-W\-F\-Tag Struct Reference}
-\label{struct_s_w_f_tag}\index{S\-W\-F\-Tag@{S\-W\-F\-Tag}}
-}
+\hypertarget{struct_s_w_f_tag}{}\section{S\+W\+F\+Tag Struct Reference}
+\label{struct_s_w_f_tag}\index{S\+W\+F\+Tag@{S\+W\+F\+Tag}}
 
 
-\hyperlink{struct_s_w_f}{S\-W\-F} tag structure.  
+\hyperlink{struct_s_w_f}{S\+W\+F} tag structure.  
 
 
 
 
-{\ttfamily \#include $<$swf.\-h$>$}
+{\ttfamily \#include $<$swf.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888}{S\-W\-F\-Tag\-Type} \hyperlink{struct_s_w_f_tag_adb10fb48757369896fd9c41e47a59f44}{type}
+\hyperlink{swf_8h_a2197ad52b3b2be681014c5c07653c888}{S\+W\+F\+Tag\+Type} \hyperlink{struct_s_w_f_tag_adb10fb48757369896fd9c41e47a59f44}{type}
 \begin{DoxyCompactList}\small\item\em Tag type. \end{DoxyCompactList}\item 
-uint32\-\_\-t \hyperlink{struct_s_w_f_tag_a17e4a212bb86a411cec95574ec263815}{size}
-\begin{DoxyCompactList}\small\item\em Size of payload (N\-O\-T the total size of the tag in-\/file) \end{DoxyCompactList}\item 
-uint8\-\_\-t $\ast$ \hyperlink{struct_s_w_f_tag_a71d91ae229304ea8ee7ed56636d3aa18}{payload}
+uint32\+\_\+t \hyperlink{struct_s_w_f_tag_a17e4a212bb86a411cec95574ec263815}{size}
+\begin{DoxyCompactList}\small\item\em Size of payload (N\+O\+T the total size of the tag in-\/file) \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \hyperlink{struct_s_w_f_tag_a71d91ae229304ea8ee7ed56636d3aa18}{payload}
 \begin{DoxyCompactList}\small\item\em Pointer to a buffer containing the contents of the tag. \end{DoxyCompactList}\item 
-uint16\-\_\-t \hyperlink{struct_s_w_f_tag_a5ea4db43f2f7891bf5dadab7556a9a54}{id}
+uint16\+\_\+t \hyperlink{struct_s_w_f_tag_a5ea4db43f2f7891bf5dadab7556a9a54}{id}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{struct_s_w_f}{S\-W\-F} tag structure. 
+\hyperlink{struct_s_w_f}{S\+W\+F} tag structure. 
 
-Definition at line 151 of file swf.\-h.
+Definition at line 152 of file swf.\+h.
 
 
 
 \subsection{Field Documentation}
-\hypertarget{struct_s_w_f_tag_a5ea4db43f2f7891bf5dadab7556a9a54}{\index{S\-W\-F\-Tag@{S\-W\-F\-Tag}!id@{id}}
-\index{id@{id}!SWFTag@{S\-W\-F\-Tag}}
-\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t S\-W\-F\-Tag\-::id}}\label{struct_s_w_f_tag_a5ea4db43f2f7891bf5dadab7556a9a54}
-16-\/bit I\-D pulled from tag; 0 indicates no I\-D. This value is not included in the payload. 
+\hypertarget{struct_s_w_f_tag_a5ea4db43f2f7891bf5dadab7556a9a54}{}\index{S\+W\+F\+Tag@{S\+W\+F\+Tag}!id@{id}}
+\index{id@{id}!S\+W\+F\+Tag@{S\+W\+F\+Tag}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t S\+W\+F\+Tag\+::id}\label{struct_s_w_f_tag_a5ea4db43f2f7891bf5dadab7556a9a54}
+16-\/bit I\+D pulled from tag; 0 indicates no I\+D. This value is not included in the payload. 
 
-Definition at line 155 of file swf.\-h.
+Definition at line 156 of file swf.\+h.
 
-\hypertarget{struct_s_w_f_tag_a71d91ae229304ea8ee7ed56636d3aa18}{\index{S\-W\-F\-Tag@{S\-W\-F\-Tag}!payload@{payload}}
-\index{payload@{payload}!SWFTag@{S\-W\-F\-Tag}}
-\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ S\-W\-F\-Tag\-::payload}}\label{struct_s_w_f_tag_a71d91ae229304ea8ee7ed56636d3aa18}
+\hypertarget{struct_s_w_f_tag_a71d91ae229304ea8ee7ed56636d3aa18}{}\index{S\+W\+F\+Tag@{S\+W\+F\+Tag}!payload@{payload}}
+\index{payload@{payload}!S\+W\+F\+Tag@{S\+W\+F\+Tag}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t$\ast$ S\+W\+F\+Tag\+::payload}\label{struct_s_w_f_tag_a71d91ae229304ea8ee7ed56636d3aa18}
 
 
 Pointer to a buffer containing the contents of the tag. 
 
 
 
-Definition at line 154 of file swf.\-h.
+Definition at line 155 of file swf.\+h.
 
-\hypertarget{struct_s_w_f_tag_a17e4a212bb86a411cec95574ec263815}{\index{S\-W\-F\-Tag@{S\-W\-F\-Tag}!size@{size}}
-\index{size@{size}!SWFTag@{S\-W\-F\-Tag}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t S\-W\-F\-Tag\-::size}}\label{struct_s_w_f_tag_a17e4a212bb86a411cec95574ec263815}
-
-
-Size of payload (N\-O\-T the total size of the tag in-\/file) 
+\hypertarget{struct_s_w_f_tag_a17e4a212bb86a411cec95574ec263815}{}\index{S\+W\+F\+Tag@{S\+W\+F\+Tag}!size@{size}}
+\index{size@{size}!S\+W\+F\+Tag@{S\+W\+F\+Tag}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t S\+W\+F\+Tag\+::size}\label{struct_s_w_f_tag_a17e4a212bb86a411cec95574ec263815}
 
 
+Size of payload (N\+O\+T the total size of the tag in-\/file) 
 
-Definition at line 153 of file swf.\-h.
 
-\hypertarget{struct_s_w_f_tag_adb10fb48757369896fd9c41e47a59f44}{\index{S\-W\-F\-Tag@{S\-W\-F\-Tag}!type@{type}}
-\index{type@{type}!SWFTag@{S\-W\-F\-Tag}}
-\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Tag\-Type} S\-W\-F\-Tag\-::type}}\label{struct_s_w_f_tag_adb10fb48757369896fd9c41e47a59f44}
+
+Definition at line 154 of file swf.\+h.
+
+\hypertarget{struct_s_w_f_tag_adb10fb48757369896fd9c41e47a59f44}{}\index{S\+W\+F\+Tag@{S\+W\+F\+Tag}!type@{type}}
+\index{type@{type}!S\+W\+F\+Tag@{S\+W\+F\+Tag}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+W\+F\+Tag\+Type} S\+W\+F\+Tag\+::type}\label{struct_s_w_f_tag_adb10fb48757369896fd9c41e47a59f44}
 
 
 Tag type. 
 
 
 
-Definition at line 152 of file swf.\-h.
+Definition at line 153 of file swf.\+h.
 
 
 
-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libswf/\hyperlink{swf_8h}{swf.\-h}\end{DoxyCompactItemize}
+libswf/\hyperlink{swf_8h}{swf.\+h}\end{DoxyCompactItemize}

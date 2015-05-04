@@ -1,128 +1,114 @@
-\hypertarget{struct_s_w_f___parser}{\section{S\-W\-F\-\_\-\-Parser Struct Reference}
-\label{struct_s_w_f___parser}\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}}
-}
+\hypertarget{struct_s_w_f___parser}{}\section{S\+W\+F\+\_\+\+Parser Struct Reference}
+\label{struct_s_w_f___parser}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
 
 
-Private data used when parsing an \hyperlink{struct_s_w_f}{S\-W\-F} file.  
+Private data used when parsing an \hyperlink{struct_s_w_f}{S\+W\+F} file.  
 
 
 
 
-{\ttfamily \#include $<$parser.\-h$>$}
+{\ttfamily \#include $<$parser.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct_s_w_f_error_desc}{S\-W\-F\-Error\-Desc} \hyperlink{struct_s_w_f___parser_a228c1268386d125a52e25b11f576a60d}{err}
-\begin{DoxyCompactList}\small\item\em Last error that occurred on this S\-W\-F\-Parser. \end{DoxyCompactList}\item 
-\hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248}{S\-W\-F\-Parser\-State} \hyperlink{struct_s_w_f___parser_aeebc37448b1cdf66f228a06a53c483e9}{state}
+\hyperlink{struct_s_w_f_error_desc}{S\+W\+F\+Error\+Desc} \hyperlink{struct_s_w_f___parser_a228c1268386d125a52e25b11f576a60d}{err}
+\begin{DoxyCompactList}\small\item\em Last error that occurred on this S\+W\+F\+Parser. \end{DoxyCompactList}\item 
+\hyperlink{parser_8h_a2d847bc5fa348d069da8cea188ca5248}{S\+W\+F\+Parser\+State} \hyperlink{struct_s_w_f___parser_aeebc37448b1cdf66f228a06a53c483e9}{state}
 \begin{DoxyCompactList}\small\item\em Current state of parser. \end{DoxyCompactList}\item 
-\hyperlink{struct_s_w_f}{S\-W\-F} $\ast$ \hyperlink{struct_s_w_f___parser_a89022933c95956b746307de9714197da}{swf}
-\begin{DoxyCompactList}\small\item\em \hyperlink{struct_s_w_f}{S\-W\-F} being decoded to. \end{DoxyCompactList}\item 
+\hyperlink{struct_s_w_f}{S\+W\+F} $\ast$ \hyperlink{struct_s_w_f___parser_a89022933c95956b746307de9714197da}{swf}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_s_w_f}{S\+W\+F} being decoded to. \end{DoxyCompactList}\item 
 \hyperlink{struct_buffer}{Buffer} \hyperlink{struct_s_w_f___parser_aee4f16e3f852e7ac2e0eeac8795a15cf}{buf}
 \begin{DoxyCompactList}\small\item\em Temporary buffer for uncompressed data. \end{DoxyCompactList}\item 
-\hyperlink{struct_s_w_f_parser_callbacks}{S\-W\-F\-Parser\-Callbacks} \hyperlink{struct_s_w_f___parser_a7ac999619795fa6e6bb4132af080eae6}{callbacks}
+\hyperlink{struct_s_w_f_parser_callbacks}{S\+W\+F\+Parser\+Callbacks} \hyperlink{struct_s_w_f___parser_a7ac999619795fa6e6bb4132af080eae6}{callbacks}
 \begin{DoxyCompactList}\small\item\em User-\/provided callbacks. \end{DoxyCompactList}\item 
 \begin{tabbing}
 xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
 union \{\\
 \>CLzmaDec \hyperlink{struct_s_w_f___parser_a1bbb269f3afac19005232a222d87d054}{lzma}\\
 \>\>{\em LZMA decoder struct. }\\
-\>z\_stream \hyperlink{struct_s_w_f___parser_adbcdea5d290997995b3924c361f9fb43}{zstrm}\\
-\>\>{\em Zlib decoder struct. }\\
 \}; \\
 
 \end{tabbing}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Private data used when parsing an \hyperlink{struct_s_w_f}{S\-W\-F} file. 
+Private data used when parsing an \hyperlink{struct_s_w_f}{S\+W\+F} file. 
 
-Definition at line 42 of file parser.\-h.
+Definition at line 43 of file parser.\+h.
 
 
 
 \subsection{Field Documentation}
-\hypertarget{struct_s_w_f___parser_a15374f3a7d108a724c0e9a6513aaa070}{\subsubsection[{"@1}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}\label{struct_s_w_f___parser_a15374f3a7d108a724c0e9a6513aaa070}
-\hypertarget{struct_s_w_f___parser_aee4f16e3f852e7ac2e0eeac8795a15cf}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!buf@{buf}}
-\index{buf@{buf}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buffer} S\-W\-F\-\_\-\-Parser\-::buf}}\label{struct_s_w_f___parser_aee4f16e3f852e7ac2e0eeac8795a15cf}
+\hypertarget{struct_s_w_f___parser_a15374f3a7d108a724c0e9a6513aaa070}{}\subsubsection[{"@1}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }\label{struct_s_w_f___parser_a15374f3a7d108a724c0e9a6513aaa070}
+\hypertarget{struct_s_w_f___parser_aee4f16e3f852e7ac2e0eeac8795a15cf}{}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}!buf@{buf}}
+\index{buf@{buf}!S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
+\subsubsection[{buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buffer} S\+W\+F\+\_\+\+Parser\+::buf}\label{struct_s_w_f___parser_aee4f16e3f852e7ac2e0eeac8795a15cf}
 
 
 Temporary buffer for uncompressed data. 
 
 
 
-Definition at line 46 of file parser.\-h.
+Definition at line 47 of file parser.\+h.
 
-\hypertarget{struct_s_w_f___parser_a7ac999619795fa6e6bb4132af080eae6}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!callbacks@{callbacks}}
-\index{callbacks@{callbacks}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{callbacks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser\-Callbacks} S\-W\-F\-\_\-\-Parser\-::callbacks}}\label{struct_s_w_f___parser_a7ac999619795fa6e6bb4132af080eae6}
+\hypertarget{struct_s_w_f___parser_a7ac999619795fa6e6bb4132af080eae6}{}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}!callbacks@{callbacks}}
+\index{callbacks@{callbacks}!S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
+\subsubsection[{callbacks}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+W\+F\+Parser\+Callbacks} S\+W\+F\+\_\+\+Parser\+::callbacks}\label{struct_s_w_f___parser_a7ac999619795fa6e6bb4132af080eae6}
 
 
 User-\/provided callbacks. 
 
 
 
-Definition at line 47 of file parser.\-h.
+Definition at line 48 of file parser.\+h.
 
-\hypertarget{struct_s_w_f___parser_a228c1268386d125a52e25b11f576a60d}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!err@{err}}
-\index{err@{err}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Error\-Desc} S\-W\-F\-\_\-\-Parser\-::err}}\label{struct_s_w_f___parser_a228c1268386d125a52e25b11f576a60d}
-
-
-Last error that occurred on this S\-W\-F\-Parser. 
+\hypertarget{struct_s_w_f___parser_a228c1268386d125a52e25b11f576a60d}{}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}!err@{err}}
+\index{err@{err}!S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+W\+F\+Error\+Desc} S\+W\+F\+\_\+\+Parser\+::err}\label{struct_s_w_f___parser_a228c1268386d125a52e25b11f576a60d}
 
 
-
-Definition at line 43 of file parser.\-h.
-
-\hypertarget{struct_s_w_f___parser_a1bbb269f3afac19005232a222d87d054}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!lzma@{lzma}}
-\index{lzma@{lzma}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{lzma}]{\setlength{\rightskip}{0pt plus 5cm}C\-Lzma\-Dec S\-W\-F\-\_\-\-Parser\-::lzma}}\label{struct_s_w_f___parser_a1bbb269f3afac19005232a222d87d054}
-
-
-L\-Z\-M\-A decoder struct. 
+Last error that occurred on this S\+W\+F\+Parser. 
 
 
 
-Definition at line 49 of file parser.\-h.
+Definition at line 44 of file parser.\+h.
 
-\hypertarget{struct_s_w_f___parser_aeebc37448b1cdf66f228a06a53c483e9}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!state@{state}}
-\index{state@{state}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F\-Parser\-State} S\-W\-F\-\_\-\-Parser\-::state}}\label{struct_s_w_f___parser_aeebc37448b1cdf66f228a06a53c483e9}
+\hypertarget{struct_s_w_f___parser_a1bbb269f3afac19005232a222d87d054}{}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}!lzma@{lzma}}
+\index{lzma@{lzma}!S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
+\subsubsection[{lzma}]{\setlength{\rightskip}{0pt plus 5cm}C\+Lzma\+Dec S\+W\+F\+\_\+\+Parser\+::lzma}\label{struct_s_w_f___parser_a1bbb269f3afac19005232a222d87d054}
+
+
+L\+Z\+M\+A decoder struct. 
+
+
+
+Definition at line 50 of file parser.\+h.
+
+\hypertarget{struct_s_w_f___parser_aeebc37448b1cdf66f228a06a53c483e9}{}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}!state@{state}}
+\index{state@{state}!S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+W\+F\+Parser\+State} S\+W\+F\+\_\+\+Parser\+::state}\label{struct_s_w_f___parser_aeebc37448b1cdf66f228a06a53c483e9}
 
 
 Current state of parser. 
 
 
 
-Definition at line 44 of file parser.\-h.
+Definition at line 45 of file parser.\+h.
 
-\hypertarget{struct_s_w_f___parser_a89022933c95956b746307de9714197da}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!swf@{swf}}
-\index{swf@{swf}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{swf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-W\-F}$\ast$ S\-W\-F\-\_\-\-Parser\-::swf}}\label{struct_s_w_f___parser_a89022933c95956b746307de9714197da}
-
-
-\hyperlink{struct_s_w_f}{S\-W\-F} being decoded to. 
+\hypertarget{struct_s_w_f___parser_a89022933c95956b746307de9714197da}{}\index{S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}!swf@{swf}}
+\index{swf@{swf}!S\+W\+F\+\_\+\+Parser@{S\+W\+F\+\_\+\+Parser}}
+\subsubsection[{swf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+W\+F}$\ast$ S\+W\+F\+\_\+\+Parser\+::swf}\label{struct_s_w_f___parser_a89022933c95956b746307de9714197da}
 
 
-
-Definition at line 45 of file parser.\-h.
-
-\hypertarget{struct_s_w_f___parser_adbcdea5d290997995b3924c361f9fb43}{\index{S\-W\-F\-\_\-\-Parser@{S\-W\-F\-\_\-\-Parser}!zstrm@{zstrm}}
-\index{zstrm@{zstrm}!SWF_Parser@{S\-W\-F\-\_\-\-Parser}}
-\subsubsection[{zstrm}]{\setlength{\rightskip}{0pt plus 5cm}z\-\_\-stream S\-W\-F\-\_\-\-Parser\-::zstrm}}\label{struct_s_w_f___parser_adbcdea5d290997995b3924c361f9fb43}
-
-
-Zlib decoder struct. 
+\hyperlink{struct_s_w_f}{S\+W\+F} being decoded to. 
 
 
 
-Definition at line 50 of file parser.\-h.
+Definition at line 46 of file parser.\+h.
 
 
 
-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libswf/\hyperlink{parser_8h}{parser.\-h}\end{DoxyCompactItemize}
+libswf/\hyperlink{parser_8h}{parser.\+h}\end{DoxyCompactItemize}
